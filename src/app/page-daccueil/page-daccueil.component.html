@@ -1,0 +1,14 @@
+<div class="div-connection">
+  <h1>WELCOME TO THE AUCTION HOUSE</h1>
+
+  <form [formGroup]="superform1" (ngSubmit)="connect()">
+
+    <label>Login :</label> <input type="text" name="login" formControlName="login">
+    <span *ngIf="loginControl.dirty && loginControl.invalid">Merci de remplir votre login!</span>
+<br>
+    <label> Password :</label> <input type="password" name="password" formControlName="password">
+    <span *ngIf="passwordControl.dirty && passwordControl.invalid">Merci de remplir votre mot de passe !</span>
+<br>
+    <input type="submit" [disabled]="superform1.invalid" value="Se connecter">
+  </form>
+</div>
