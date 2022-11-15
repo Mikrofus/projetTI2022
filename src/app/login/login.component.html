@@ -1,4 +1,3 @@
-<h1>BIENVENUE AU BAZAAR !</h1>
 <form [formGroup]="formLogin1" (ngSubmit)="connect()" class="login-form">
   <div class="form-floating mb-3">
     <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="login"
@@ -13,5 +12,5 @@
     <span *ngIf="passwordControl.invalid && passwordControl.dirty">Merci de remplir le champ mot de passe !</span>
   </div>
   <br>
-  <input type="submit" [disabled]="formLogin1.invalid" value="Log in">  &nbsp;
+  <input type="submit" [disabled]="formLogin1.invalid" value="Se connecter" class="btn btn-lg btn-primary">  &nbsp;
 </form>
