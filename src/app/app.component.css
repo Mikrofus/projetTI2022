@@ -10,3 +10,10 @@ h2{
 h1{
   text-align: center;
 }
+
+ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
