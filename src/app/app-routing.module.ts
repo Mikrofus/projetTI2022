@@ -8,12 +8,12 @@ import {TestVideComponent} from "./test-vide/test-vide.component";
 
 
 const routes:Routes=[
-  // {
-  //   path:'', redirectTo:'testVide', pathMatch:"full"
-  // },
-  // {
-  //   path:'testVide', component:AppComponent
-  // },
+  {
+    path:'', redirectTo:'testVide', pathMatch:"full"
+  },
+  {
+    path:'testVide', component:AppComponent
+  },
   {
     path:'login',component:PageDaccueilComponent
   }
