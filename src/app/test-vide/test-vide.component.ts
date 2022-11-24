@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-vide.component.css']
 })
 export class TestVideComponent implements OnInit {
-
+  faMagnifyingGlass = faMagnifyingGlass;
+  faUserPlus = faUserPlus;
+  faUser = faUser;
   constructor() { }
 
   ngOnInit(): void {
