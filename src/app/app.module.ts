@@ -9,6 +9,7 @@ import {InscriptionComponent} from './inscription/inscription.component';
 import {RouterLinkWithHref, RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { TestVideComponent } from './test-vide/test-vide.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TestVideComponent } from './test-vide/test-vide.component';
     ReactiveFormsModule,
     RouterLinkWithHref,
     RouterOutlet,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
