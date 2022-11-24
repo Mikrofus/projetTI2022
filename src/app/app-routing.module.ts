@@ -9,10 +9,7 @@ import {TestVideComponent} from "./test-vide/test-vide.component";
 
 const routes:Routes=[
   {
-    path:'', redirectTo:'testVide', pathMatch:"full"
-  },
-  {
-    path:'testVide', component:AppComponent
+    path:'', component:TestVideComponent
   },
   {
     path:'login',component:PageDaccueilComponent

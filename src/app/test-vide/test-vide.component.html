@@ -15,18 +15,18 @@
   <ul id="navbar">
 
 
-    <li><fa-icon [icon] = "faMagnifyingGlass"></fa-icon><input type="text" id="barreRecherche" placeholder="Recherche" /></li>
-    <li><fa-icon [icon]="faUserPlus"></fa-icon> <a href="#">S'inscrire</a> </li>
-    <li><fa-icon [icon]="faUser"></fa-icon> <a href="#">S'identifier</a></li>
-
+    <li>
+      <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+      <input type="text" id="barreRecherche" placeholder="Recherche"/></li>
+    <li>
+      <fa-icon [icon]="faUserPlus"></fa-icon>
+      <a routerLink="/login">Connection !</a>
   </ul>
-
 
 
 </header>
 
 <nav>
-
 
 
 </nav>
@@ -51,9 +51,8 @@
 </div>
 
 
-
 </body>
 
 
-
 </html>
+<router-outlet></router-outlet>
