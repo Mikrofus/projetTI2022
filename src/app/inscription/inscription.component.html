@@ -1,0 +1,26 @@
+<form [formGroup]="formSignIn1" (ngSubmit)="SignIn()" class="login-form">
+
+  <!--*******************************************PSEUDO**************************************************************-->
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="floating_pseudo" placeholder="SuperPseudoCool" name="pseudo"
+           formControlName="pseudo">
+    <label for="floating_pseudo">Pseudo :</label>
+        <span *ngIf="pseudoControl.invalid && pseudoControl.touched">Le pseudo doit contenir minimum 3 caractères !</span>
+  </div>
+  <!--*****************************************************MAIL******************************************************-->
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="floating_mail" placeholder="name@example.com" name="mail"
+           formControlName="mail">
+    <label for="floating_mail">Mail :</label>
+        <span *ngIf="mailControl.invalid && mailControl.dirty && mailControl.touched">Merci d'entrer une adresse mail correcte !</span>
+  </div>
+  <!--************************************************MOT DE PASSE***************************************************-->
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" id="floating_password" placeholder="SuperMotDePasse" name="password"
+           formControlName="password">
+    <label for="floating_password">Mot de passe :</label>
+        <span *ngIf="passwordControl.invalid && passwordControl.dirty && passwordControl.touched">Le mot de passe doit contenir minimum 6 caractères !</span>
+  </div>
+
+  <input type="submit" [disabled]="formSignIn1.invalid" value="S'inscrire" class="btn btn-lg btn-primary">
+</form>

@@ -1,0 +1,19 @@
+.form-floating{
+  border-radius: 3px;
+  width: auto;
+  display: block;
+}
+h2{
+  text-align: center;
+  text-decoration: underline;
+}
+h1{
+  text-align: center;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+}
