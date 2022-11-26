@@ -2,9 +2,6 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { PageDaccueilComponent } from './page-daccueil/page-daccueil.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import {AppComponent} from './app.component';
 import {PageDaccueilComponent} from './page-daccueil/page-daccueil.component';
 import {LoginComponent} from './login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
@@ -22,10 +19,6 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     InscriptionComponent,
     TestVideComponent
   ],
-    imports: [
-        BrowserModule,
-        ReactiveFormsModule
-    ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
