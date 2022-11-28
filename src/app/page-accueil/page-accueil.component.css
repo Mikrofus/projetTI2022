@@ -95,4 +95,64 @@ input[type=text]{
   position:absolute; left:0; top:8px; padding:7px 8px; color:white;
 }
 
+.filtres{
+  width:100%;
+  height:75px;
+  background-color: white;
+  margin-bottom: 20px;
+}
 
+.product{
+
+
+  text-align: center;
+
+
+  border-radius: 5px;
+  background-color: #20212e;
+  width: 300px;
+  height:300px;
+
+
+}
+
+.pro-container{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+
+.pro img{
+  width: 298px;
+  height: 200px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.product .pro .des{
+  text-align: start;
+  padding: 10px;
+  position: relative;
+}
+
+.product .pro .des .titreEnchere{
+  color: whitesmoke;
+
+
+
+}
+
+.product .pro .des p{
+  color: rgb(140, 4, 197);
+  font-weight: 600;
+  position: absolute;
+
+  top: 60px;
+}
+
+.product .pro .des .timer{
+ position: absolute;
+  top: 60px;
+  left: 220px;
+}
