@@ -7,6 +7,24 @@ h2{
   text-align: center;
   text-decoration: underline;
 }
+
 h1{
+  font-size: larger;
+  font-family: "Yu Gothic UI Light";
+  text-align: center;
+}
+.div-connection{
+  display: block;
+  text-align: left;
+  border: black;
+  border-radius: 2rem;
+  background-color: aliceblue;
+  max-width: 600px;
+  padding: 3rem;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 15%);
+  margin-bottom: 2rem;
+  box-sizing: border-box;
+}
+input{
   text-align: center;
 }
