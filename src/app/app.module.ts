@@ -7,6 +7,8 @@ import {LoginComponent} from "./login/login.component";
 import {InscriptionComponent} from "./inscription/inscription.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   exports: [
