@@ -40,14 +40,14 @@ a{
 }
 
 
-#navbar{
+.navbar{
   display: flex;
   align-items: center;
 
 
 }
 
-#navbar li{
+.navbar li{
 
   color: white;
   list-style: none;
@@ -58,14 +58,14 @@ a{
 
 
 
-#navbar li a {
+.navbar li a {
 
   font-size: 20px;
   color: white;
   padding-left: 10px;
 }
 
-#navbar li a:hover {
+.navbar li a:hover {
 color:#d33bfd;
 
 }

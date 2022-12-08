@@ -17,6 +17,7 @@ export class PageAccueilComponent implements OnInit {
   faMagnifyingGlass = faMagnifyingGlass;
   faUserPlus = faUserPlus;
   faUser = faUser;
+  isConnected: boolean = false;
 
   constructor() { }
 

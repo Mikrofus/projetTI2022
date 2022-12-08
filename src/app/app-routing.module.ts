@@ -8,6 +8,7 @@ import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
 
 
 
+
 const routes:Routes=[
   {
     path:'login',component:PageDaccueilComponent
