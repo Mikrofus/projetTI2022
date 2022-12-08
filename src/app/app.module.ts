@@ -8,6 +8,10 @@ import {InscriptionComponent} from "./inscription/inscription.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {Router, RouterLink, RouterLinkActive} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
+
+
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule,
+    RouterLink,
+    RouterLinkActive,
+
   ],
   providers: [],
   exports: [

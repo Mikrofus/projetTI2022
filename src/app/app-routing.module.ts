@@ -4,21 +4,24 @@ import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {AppComponent} from "./app.component";
 import {PageDaccueilComponent} from "./page-daccueil/page-daccueil.component";
-import {TestVideComponent} from "./test-vide/test-vide.component";
+import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
+
 
 
 const routes:Routes=[
   {
-    path:'', component:TestVideComponent
-  },
-  {
     path:'login',component:PageDaccueilComponent
+  },
+
+  {
+    path:'', component:PageAccueilComponent
   }
+
 ];
 
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
