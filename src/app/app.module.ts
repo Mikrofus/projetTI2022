@@ -10,6 +10,7 @@ import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -29,6 +30,7 @@ import {AppRoutingModule} from "./app-routing.module";
     AppRoutingModule,
     RouterLink,
     RouterLinkActive,
+    HttpClientModule
 
   ],
   providers: [],
