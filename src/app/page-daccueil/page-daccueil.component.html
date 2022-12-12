@@ -3,6 +3,6 @@
 <div class="form-floating">
   <app-login></app-login>
   <h2>Pas encore inscrit ?</h2>
-  <app-inscription></app-inscription>
+  <app-inscription (userCreated)="create($event)"></app-inscription>
 </div>
 

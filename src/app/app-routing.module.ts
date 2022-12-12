@@ -5,12 +5,17 @@ import {LoginComponent} from "./login/login.component";
 import {AppComponent} from "./app.component";
 import {PageDaccueilComponent} from "./page-daccueil/page-daccueil.component";
 import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
+import {InscriptionComponent} from "./inscription/inscription.component";
 
 
 
 const routes:Routes=[
   {
     path:'login',component:PageDaccueilComponent
+  },
+
+  {
+    path:'register',component:InscriptionComponent
   },
 
   {

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {DtoOutputUser} from "./dto-user/dto-output-user";
 
 @Component({
   selector: 'app-inscription',
@@ -7,6 +8,9 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./inscription.component.css']
 })
 export class InscriptionComponent implements OnInit {
+  @Output()
+  userCreated: EventEmitter<DtoOutputUser> = new EventEmitter<DtoOutputUser>();
+
   formSignIn1: FormGroup = this._fb.group({
     pseudo:this._fb.control("",[Validators.required,Validators.minLength(3)]),
     mail:this._fb.control("",[Validators.required, Validators.email]),
@@ -18,7 +22,13 @@ export class InscriptionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  SignIn() {
+  signIn() {
+    this.userCreated.next({
+      pseudo: this.formSignIn1.value.pseudo,
+      mail: this.formSignIn1.value.mail,
+      pass: this.formSignIn1.value.password
+    });
+    this.formSignIn1.reset();
   }
 
   get pseudoControl(){
