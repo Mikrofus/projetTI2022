@@ -78,7 +78,7 @@ input[type=text]{
 
 
 
-#barreRecherche {
+.barreRecherche {
   background-color: transparent;
   width: 300px;
   border: 2px solid grey;
