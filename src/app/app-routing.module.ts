@@ -16,7 +16,7 @@ const routes:Routes=[
   },
 
   {
-    path:'', component:PageAccueilComponent
+    path:'root', component:PageAccueilComponent
   },
 
   {

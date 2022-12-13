@@ -6,16 +6,17 @@
           <label>Nom du produit :</label><br>
           <input type="text" ngModel name="nameAuction">
           <br>
-          <label>Adresse de récupération :</label>
-          <br>
-          <label>Rue:</label><br>
-          <input type="text" ngModel name="street"><br>
-          <label>Code Postal:</label><br>
-          <input  type="text" ngModel name="postalCode"><br>
-          <label>Ville:</label><br>
-          <input  type="text" ngModel name="city"><br>
-          <label>Pays:</label><br>
-          <input  type="text" ngModel name="country"><br>
+          <fieldset>
+            <legend>Adresse de récupération :</legend>
+            <label>Rue:</label><br>
+            <input type="text" ngModel name="street"><br>
+            <label>Code Postal:</label><br>
+            <input  type="text" ngModel name="postalCode"><br>
+            <label>Ville:</label><br>
+            <input  type="text" ngModel name="city"><br>
+            <label>Pays:</label><br>
+            <input  type="text" ngModel name="country"><br>
+          </fieldset>
           <br>
           <label>Categorie de produit:</label>
           <select ngModel name="Categorie">
@@ -25,9 +26,13 @@
           </select>
           <br><br>
           <button class="btn btn-primary">Valider</button>
-          <button type="button" (click)="resetForm(auctionForm)">Vider Formulaire</button>
+          <button class="btn btn-primary" type="button" (click)="resetForm(auctionForm)">Vider Formulaire</button>
+          <button class="btn btn-primary" routerLink="/root" routerLinkActive="active">Retour</button>
         </div>
       </form>
     </div>
   </div>
 </div>
+
+<router-outlet></router-outlet>
+
