@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NgForm} from "@angular/forms";
 
+
 @Component({
   selector: 'app-form-add-auction',
   templateUrl: './form-add-auction.component.html',
@@ -8,14 +9,11 @@ import {NgForm} from "@angular/forms";
 })
 export class FormAddAuctionComponent {
 
-  ngOnInit(){
-  }
-
   onFormSubmit(auctionForm:NgForm){
-    console.log(auctionForm)
+    console.log(auctionForm);
   }
 
-  resetForm(auctionForm: NgForm){
+  resetForm(auctionForm:NgForm){
     auctionForm.resetForm();
   }
 
