@@ -34,7 +34,7 @@ import {HttpClientModule} from "@angular/common/http";
     AppRoutingModule,
     RouterLink,
     RouterLinkActive,
-    HttpClientModule
+    HttpClientModule,
     FormsModule,
 
   ],

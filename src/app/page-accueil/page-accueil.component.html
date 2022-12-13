@@ -12,7 +12,7 @@
 <header>
   <a class="bazaar" href="#" class="titre"><img class="bazaar" id="titreSite" src="assets/images/Bazaar.png"></a>
 
-  <ul *ngIf="isConnected == false; else elseBlock" class="navbar">
+  <ul *ngIf="isConnected == true; else elseBlock" class="navbar">
 
     <li><fa-icon [icon] ="faMagnifyingGlass"></fa-icon><input type="text" class="barreRecherche" placeholder="Recherche" /></li>
     <li><fa-icon [icon]="faUserPlus"></fa-icon> <a routerLink="">S'inscrire</a> </li>
