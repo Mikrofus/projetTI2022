@@ -5,8 +5,7 @@ import {LoginComponent} from "./login/login.component";
 import {AppComponent} from "./app.component";
 import {PageDaccueilComponent} from "./page-daccueil/page-daccueil.component";
 import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
-import {FormAddAuctionComponent} from "./form-add-auction/form-add-auction.component";
-
+import {InscriptionComponent} from "./inscription/inscription.component";
 
 
 
@@ -16,11 +15,11 @@ const routes:Routes=[
   },
 
   {
-    path:'root', component:PageAccueilComponent
+    path:'register',component:InscriptionComponent
   },
 
   {
-    path:'form-add-auction', component:FormAddAuctionComponent
+    path:'', component:PageAccueilComponent
   }
 
 ];

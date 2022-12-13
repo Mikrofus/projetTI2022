@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validator, Validators} from "@angular/forms";
+import {DtoOutputUser} from "../inscription/dto-user/dto-output-user";
+import {InscriptionService} from "../inscription/inscription.service";
 
 @Component({
   selector: 'app-page-daccueil',
@@ -12,7 +14,8 @@ export class PageDaccueilComponent implements OnInit {
     password:this.fb.control("",Validators.required)
   });
 
-  constructor(private fb:FormBuilder) { }
+  users : DtoOutputUser[] = [];
+  constructor(private fb:FormBuilder, private _inscriptionService: InscriptionService) { }
 
   ngOnInit(): void {
   }
@@ -26,5 +29,9 @@ export class PageDaccueilComponent implements OnInit {
 
   connect() {
 
+  }
+
+  create(dto: DtoOutputUser) {
+    this._inscriptionService.create(dto).subscribe(user => this.users.push(user));
   }
 }

@@ -12,6 +12,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { FormAddAuctionComponent } from './form-add-auction/form-add-auction.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -33,6 +34,7 @@ import { FormAddAuctionComponent } from './form-add-auction/form-add-auction.com
     AppRoutingModule,
     RouterLink,
     RouterLinkActive,
+    HttpClientModule
     FormsModule,
 
   ],
