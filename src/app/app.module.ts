@@ -8,7 +8,9 @@ import {InscriptionComponent} from "./inscription/inscription.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
-
+import {AuctionHubComponent} from "./auction-hub/auction-hub.component";
+import {AuctionListComponent} from "./auction-hub/auction-list/auction-list.component";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,12 +18,15 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     PageDaccueilComponent,
     LoginComponent,
     InscriptionComponent,
-    PageAccueilComponent
+    PageAccueilComponent,
+    AuctionHubComponent,
+    AuctionListComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   exports: [

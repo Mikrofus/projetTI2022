@@ -10,7 +10,7 @@ import {DtoOutputCreateAuction} from "./dtos/dto-output-create-auction";
 })
 export class AuctionService {
 
-  private static readonly ENTRY_POINT = environment.apiUrl
+  private static readonly ENTRY_POINT = environment.apiUrl + "/auctions"
 
   constructor(private _httpClient: HttpClient) {
   }

@@ -16,7 +16,7 @@ export class AuctionHubComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+  this.fetchAll();
   }
 
   private fetchAll() {
