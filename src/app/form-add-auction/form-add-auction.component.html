@@ -3,26 +3,18 @@
     <div>
       <form #auctionForm="ngForm" (ngSubmit)="onFormSubmit(auctionForm)">
         <div>
-          <label>Nom du produit :</label><br>
+          <label>Nom du produit:</label><br>
           <input type="text" ngModel name="nameAuction">
           <br>
-          <fieldset>
-            <legend>Adresse de récupération :</legend>
-            <label>Rue:</label><br>
-            <input type="text" ngModel name="street"><br>
-            <label>Code Postal:</label><br>
-            <input  type="text" ngModel name="postalCode"><br>
-            <label>Ville:</label><br>
-            <input  type="text" ngModel name="city"><br>
-            <label>Pays:</label><br>
-            <input  type="text" ngModel name="country"><br>
-          </fieldset>
+          <lable>Prix de base:</lable>
+          <input type="number" ngModel name="prixAuction">
           <br>
           <label>Categorie de produit:</label>
           <select ngModel name="Categorie">
             <option value="homeAppliance">Electroménager</option>
             <option value="electronics">Appareils électroniques</option>
             <option value="vehicle">Véhicule</option>
+            <option value="garden">Jardinage</option>
           </select>
           <br><br>
           <button class="btn btn-primary">Valider</button>
