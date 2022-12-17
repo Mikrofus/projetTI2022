@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductHubComponent } from './product-hub.component';
+import { UserHubComponent } from './user-hub.component';
 
-describe('ProductHubComponent', () => {
-  let component: ProductHubComponent;
-  let fixture: ComponentFixture<ProductHubComponent>;
+describe('UserHubComponent', () => {
+  let component: UserHubComponent;
+  let fixture: ComponentFixture<UserHubComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductHubComponent ]
+      declarations: [ UserHubComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProductHubComponent);
+    fixture = TestBed.createComponent(UserHubComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
