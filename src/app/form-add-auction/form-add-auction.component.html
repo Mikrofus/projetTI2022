@@ -1,38 +1,57 @@
-<div>
+<div *ngIf="user; else userNotFound">
   <div>
     <div>
-      <form #auctionForm="ngForm" (ngSubmit)="onFormSubmit(auctionForm)">
+      <form [formGroup]="form" (ngSubmit)="emitAuctionCreated()">
         <div>
           <label>Nom du produit :</label><br>
-          <input type="text" ngModel name="nameAuction">
+          <input type="text" formControlName="title">
+          <div *ngIf="titleControl.dirty && titleControl.invalid">
+            vous n'avez pas entrez de nom pour votre produit.
+          </div>
           <br>
-          <fieldset>
-            <legend>Adresse de récupération :</legend>
-            <label>Rue:</label><br>
-            <input type="text" ngModel name="street"><br>
-            <label>Code Postal:</label><br>
-            <input  type="text" ngModel name="postalCode"><br>
-            <label>Ville:</label><br>
-            <input  type="text" ngModel name="city"><br>
-            <label>Pays:</label><br>
-            <input  type="text" ngModel name="country"><br>
-          </fieldset>
+          <textarea cols="20" rows="2" wrap="hard" formControl="descri">Entrer la descrition du produit :</textarea>
+          <div *ngIf="descriControl.dirty && descriControl.invalid">
+            vous n'avez pas entrez de nom pour votre produit.
+          </div>
           <br>
           <label>Categorie de produit:</label>
-          <select ngModel name="Categorie">
+          <select formControl="category">
             <option value="homeAppliance">Electroménager</option>
             <option value="electronics">Appareils électroniques</option>
             <option value="vehicle">Véhicule</option>
           </select>
+          <div *ngIf="categoryControl.dirty && categoryControl.invalid">
+            vous n'avez pas entrez de nom pour votre produit.
+          </div>
+          <br>
+          <label>Entrez l'image de votre produit :</label><br>
+          <input type="file" formControl="img">
+          <div *ngIf="imgControl.dirty && imgControl.invalid">
+            vous n'avez pas entrez de nom pour votre produit.
+          </div>
+          <br>
+          <label>Entrez Prix de départ du produit :</label><br>
+          <input type="number" placeholder="1.0" step="5" min="1" formControl="price"> €
+          <div *ngIf="priceControl.dirty && priceControl.invalid">
+            vous n'avez pas entrez de nom pour votre produit.
+          </div>
+          <br>
+          <label>Entrez La date din de la mise en vente :</label><br>
+          <input type="date" formControl="timer">
+          <div *ngIf="timerControl.dirty && timerControl.invalid">
+            vous n'avez pas entrez de nom pour votre produit.
+          </div>
           <br><br>
-          <button class="btn btn-primary">Valider</button>
-          <button class="btn btn-primary" type="button" (click)="resetForm(auctionForm)">Vider Formulaire</button>
+          <input type="submit" [disabled]="form.invalid">
+          <button class="btn btn-primary" type="button" (click)="resetForm()">Vider Formulaire</button>
           <button class="btn btn-primary" routerLink="/root" routerLinkActive="active">Retour</button>
         </div>
       </form>
     </div>
   </div>
 </div>
-
-<router-outlet></router-outlet>
+<ng-template #userNotFound>
+  <span>Vous ne pouvez pas  acceder à cette page. si vous n'êtes pas connecté !!</span>
+  <button class="btn btn-primary" routerLink="/login" routerLinkActive="active">Retour</button>
+</ng-template>
 
