@@ -4,21 +4,35 @@ import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {AppComponent} from "./app.component";
 import {PageDaccueilComponent} from "./page-daccueil/page-daccueil.component";
-import {TestVideComponent} from "./test-vide/test-vide.component";
+
+import {AuctionHubComponent} from "./auction-hub/auction-hub.component";
+import {AuctionListComponent} from "./auction-hub/auction-list/auction-list.component";
+import {AuctionDetailComponent} from "./auction-hub/auction-detail/auction-detail.component";
 
 
 const routes:Routes=[
   {
-    path:'', component:TestVideComponent
+    path:'auctions', component:AuctionHubComponent,
+    children:[
+      {
+        path:'list', component: AuctionListComponent
+      },
+      {
+        path:'detail/:auctionId',component:AuctionDetailComponent
+      }
+    ]
   },
   {
     path:'login',component:PageDaccueilComponent
+  },
+  {
+    path:'',redirectTo:'auctions', pathMatch:'full'
   }
 ];
 
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

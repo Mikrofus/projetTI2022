@@ -2,11 +2,11 @@
 <div class="pro-container">
 
   <div *ngFor="let auction of auctions" class="product">
-    <a href="#" class="pro">
+    <a routerLink="detail/{{auction.id}}" class="pro">
       <img src="assets/images/test.jpg"  alt="">
       <div class="des">
         <span class="titreEnchere">{{auction.descri}}</span>
-        <p>{{auction.price}}</p>
+        <p>$ {{auction.price}}</p>
         <div class="timer">
           <span>03</span>
           <span>:</span>

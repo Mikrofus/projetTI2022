@@ -11,6 +11,9 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {AuctionHubComponent} from "./auction-hub/auction-hub.component";
 import {AuctionListComponent} from "./auction-hub/auction-list/auction-list.component";
 import {HttpClientModule} from "@angular/common/http";
+import { AuctionDetailComponent } from './auction-hub/auction-detail/auction-detail.component';
+import {RouterLink, RouterOutlet} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -20,13 +23,17 @@ import {HttpClientModule} from "@angular/common/http";
     InscriptionComponent,
     PageAccueilComponent,
     AuctionHubComponent,
-    AuctionListComponent
+    AuctionListComponent,
+    AuctionDetailComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterLink,
+    RouterOutlet,
+    AppRoutingModule
   ],
   providers: [],
   exports: [
