@@ -13,6 +13,9 @@ import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { FormAddAuctionComponent } from './form-add-auction/form-add-auction.component';
 import { MenuAuctionComponent } from './menu-auction/menu-auction.component';
+import { UserHubComponent } from './user-hub/user-hub.component';
+
+
 
 
 
@@ -26,7 +29,8 @@ import { MenuAuctionComponent } from './menu-auction/menu-auction.component';
     InscriptionComponent,
     PageAccueilComponent,
     FormAddAuctionComponent,
-    MenuAuctionComponent
+    MenuAuctionComponent,
+    UserHubComponent,
   ],
   imports: [
     BrowserModule,
