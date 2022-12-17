@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {NgForm} from "@angular/forms";
+import { Component,EventEmitter,OnInit,Output } from '@angular/core';
+import {DtoOutputCreateAuction} from "../auction-hub/dtos/dto-output-create-auction";
+import {FormBuilder,FormGroup,Validators} from "@angular/forms";
 
 
 @Component({
@@ -7,14 +8,69 @@ import {NgForm} from "@angular/forms";
   templateUrl: './form-add-auction.component.html',
   styleUrls: ['./form-add-auction.component.css']
 })
-export class FormAddAuctionComponent {
+export class FormAddAuctionComponent implements  OnInit {
 
-  onFormSubmit(auctionForm:NgForm){
-    console.log(auctionForm);
+  @Output()
+  AuctionCreated: EventEmitter<DtoOutputCreateAuction> = new EventEmitter<DtoOutputCreateAuction>();
+
+  form: FormGroup = this._fb.group({
+    title: ['', Validators.required],
+    descri: ['', Validators.required],
+    category: ['',Validators.required],
+    img: ['',Validators.required],
+    price: [0,[Validators.required, Validators.min(1)]],
+    timer: ['',Validators.required]
+  });
+
+  ngOnInit(): void {
   }
 
-  resetForm(auctionForm:NgForm){
-    auctionForm.resetForm();
+
+  constructor(private _fb: FormBuilder) {
+
   }
+
+  emitAuctionCreated() {
+    this.AuctionCreated.next({
+      id_user: 1,
+      title: this.form.value.title,
+      category: this.form.value.category,
+      descri: this.form.value.descri,
+      img: this.form.value.img,
+      price: this.form.value.price,
+      timer: this.form.value.timer
+    });
+    this.form.reset();
+  }
+
+  get titleControl(){
+    return this.form.controls['title'];
+  }
+
+  get descriControl(){
+    return this.form.controls['descri'];
+  }
+
+  get categoryControl(){
+    return this.form.controls['category'];
+  }
+
+  get imgControl(){
+    return this.form.controls['img'];
+  }
+
+  get priceControl(){
+    return this.form.controls['price'];
+  }
+
+  get timerControl(){
+    return this.form.controls['timer'];
+  }
+
+  resetForm(){
+    this.form.reset();
+  }
+
+
 
 }
