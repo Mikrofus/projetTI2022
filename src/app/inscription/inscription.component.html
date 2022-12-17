@@ -2,7 +2,7 @@
 
   <!--*******************************************PSEUDO**************************************************************-->
   <div class="form-floating mb-3">
-    <input type="email" class="form-control" id="floating_pseudo" placeholder="SuperPseudoCool" name="pseudo"
+    <input type="text" class="form-control" id="floating_pseudo" placeholder="SuperPseudoCool" name="pseudo"
            formControlName="pseudo">
     <label for="floating_pseudo">Pseudo :</label>
         <span *ngIf="pseudoControl.invalid && pseudoControl.touched">Le pseudo doit contenir minimum 3 caractères !</span>
