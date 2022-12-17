@@ -12,21 +12,16 @@ import {AuctionDetailComponent} from "./auction-hub/auction-detail/auction-detai
 
 const routes:Routes=[
   {
-    path:'auctions', component:AuctionHubComponent,
-    children:[
-      {
-        path:'list', component: AuctionListComponent
-      },
-      {
-        path:'detail/:auctionId',component:AuctionDetailComponent
-      }
-    ]
+    path:'list',component:AuctionListComponent
+  },
+  {
+    path:'detail/:auctionId',component:AuctionDetailComponent
   },
   {
     path:'login',component:PageDaccueilComponent
   },
   {
-    path:'',redirectTo:'auctions', pathMatch:'full'
+    path:'', component:AuctionHubComponent
   }
 ];
 

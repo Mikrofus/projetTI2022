@@ -25,11 +25,13 @@ span{
 
 
 .pro-container{
+
   display:flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-left: 74px;
   margin-right: 74px;
+
 
 
 }
@@ -71,4 +73,10 @@ span{
   position: absolute;
   top: 60px;
   left: 220px;
+}
+
+footer{
+  width: 100%;
+  height:100%;
+  background-color: #d33bfd;
 }

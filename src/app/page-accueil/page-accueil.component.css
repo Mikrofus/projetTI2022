@@ -110,11 +110,9 @@ input[type=text]{
   width: 300px;
   height:300px;
   margin: 12px 0;
-
-
+  margin: 15px 0;
 
 }
-
 
 
 .pro-container{
@@ -127,15 +125,10 @@ input[type=text]{
 
 }
 
-.pro-container .product a{
-  height: 300px;
-  width: 300px;
 
-
-}
 
 .pro img{
-  width: 298px;
+  width: 299px;
   height: 200px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
