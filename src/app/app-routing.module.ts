@@ -4,33 +4,29 @@ import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {AppComponent} from "./app.component";
 import {PageDaccueilComponent} from "./page-daccueil/page-daccueil.component";
-import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
-import {InscriptionComponent} from "./inscription/inscription.component";
-import {FormAddAuctionComponent} from "./form-add-auction/form-add-auction.component";
-import {MenuUserComponent} from "./menu-user/menu-user.component";
 
+import {AuctionHubComponent} from "./auction-hub/auction-hub.component";
+import {AuctionListComponent} from "./auction-hub/auction-list/auction-list.component";
+import {AuctionDetailComponent} from "./auction-hub/auction-detail/auction-detail.component";
+import {InscriptionComponent} from "./inscription/inscription.component";
 
 
 const routes:Routes=[
   {
-    path:'login',component:PageDaccueilComponent
-  },
-
-  {
-    path:'register',component:InscriptionComponent
-  },
-
-  {
-    path:'', component:PageAccueilComponent
+    path:'list',component:AuctionListComponent
   },
   {
-    path:"addAuction", component:FormAddAuctionComponent
+    path:'detail/:auctionId',component:AuctionDetailComponent
   },
   {
-    path:"menuUser", component:MenuUserComponent
+    path:'login',component:LoginComponent
+  },
+  {
+    path:'inscription',component:PageDaccueilComponent
+  },
+  {
+    path:'', component:AuctionHubComponent
   }
-
-
 ];
 
 

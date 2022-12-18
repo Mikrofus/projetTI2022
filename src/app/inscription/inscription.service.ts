@@ -9,7 +9,7 @@ import {DtoInputUser} from "./dto-user/dto-input-user";
   providedIn: 'root'
 })
 export class InscriptionService {
-  private static readonly ENTRY_POINT = environment.apiUrl + "/users"
+  private static readonly ENTRY_POINT = environment.apiUrl + "/users/create"
   constructor(private _httpClient: HttpClient) { }
 
   create(dto: DtoOutputUser): Observable<DtoInputUser>{

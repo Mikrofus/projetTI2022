@@ -2,7 +2,10 @@ a{
   list-style: none;
 }
 
-
+span{
+  text-decoration:none;
+  color: whitesmoke;
+}
 
 .product{
 
@@ -13,7 +16,7 @@ a{
   background-color: rgb(33, 28, 28);
   width: 300px;
   height:300px;
-  margin: 12px 0;
+  margin: 28px 0;
 
 
 
@@ -22,11 +25,14 @@ a{
 
 
 .pro-container{
+
   display:flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin-left: 74px;
   margin-right: 74px;
+
+
 
 
 }
@@ -69,3 +75,4 @@ a{
   top: 60px;
   left: 220px;
 }
+

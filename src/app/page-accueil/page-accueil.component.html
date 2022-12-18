@@ -1,4 +1,4 @@
-<html>
+
 
 <head>
 <title>Bazaar</title>
@@ -7,30 +7,19 @@
 </head>
 
 
-<body>
+
 
 <header>
-  <a class="bazaar" href="#" class="titre"><img class="bazaar" id="titreSite" src="assets/images/Bazaar.png"></a>
+  <a class="bazaar" routerLink="" class="titre"><img class="bazaar" id="titreSite" src="assets/images/Bazaar.png"></a>
 
-  <ul *ngIf="isConnected == true; else elseBlock" class="navbar">
+  <ul id="navbar">
 
-    <li><fa-icon [icon] ="faMagnifyingGlass"></fa-icon><input type="text" class="barreRecherche" placeholder="Recherche" /></li>
-    <li><fa-icon [icon]="faUserPlus"></fa-icon> <a routerLink="/register">S'inscrire</a> </li>
-    <li><fa-icon [icon]="faUser"></fa-icon> <a routerLink="/login" routerLinkActive="active" >S'identifier</a></li>
+
+    <li><fa-icon [icon] = "faMagnifyingGlass"></fa-icon><input type="text" id="barreRecherche" placeholder="Recherche" /></li>
+    <li><fa-icon [icon]="faUserPlus"></fa-icon> <a routerLink="inscription">S'inscrire</a> </li>
+    <li><fa-icon [icon]="faUser"></fa-icon> <a routerLink="login">S'identifier</a></li>
 
   </ul>
-  <ng-template #elseBlock>
-    <ul class="navbar">
-
-      <li><fa-icon [icon] ="faMagnifyingGlass"></fa-icon><input type="text" class="barreRecherche" placeholder="Recherche" /></li>
-      <li><a routerLink="/addAuction" routerLinkActive="active">Ajouter</a> </li>
-      <li><a routerLink="/menuUser" routerLinkActive="active" >Profile</a></li>
-      <li><a routerLink="" routerLinkActive="active">Déconnexion</a></li>
-
-    </ul>
-  </ng-template>
-
-
 
 </header>
 
@@ -40,130 +29,8 @@
 
 </nav>
 
-<div class="pro-container">
-  <div class="product">
-  <a href="#" class="pro">
-      <img src="assets/images/test.jpg"  alt="">
-    <div class="des">
-      <span class="titreEnchere">Test phrase longue</span>
-      <p>$ 10</p>
-      <div class="timer">
-        <span>03</span>
-        <span>:</span>
-        <span>30</span>
-        <span>:</span>
-        <span>59</span>
-      </div>
-
-    </div>
-
-  </a>
-
-  </div>
-  <div class="product">
-    <a href="#" class="pro">
-      <img src="assets/images/test.jpg"  alt="">
-      <div class="des">
-        <span class="titreEnchere">Test phrase longue</span>
-        <p>$ 10</p>
-        <div class="timer">
-          <span>03</span>
-          <span>:</span>
-          <span>30</span>
-          <span>:</span>
-          <span>59</span>
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
-  <div class="product">
-    <a href="#" class="pro">
-      <img src="assets/images/test.jpg"  alt="">
-      <div class="des">
-        <span class="titreEnchere">Test phrase longue</span>
-        <p>$ 10</p>
-        <div class="timer">
-          <span>03</span>
-          <span>:</span>
-          <span>30</span>
-          <span>:</span>
-          <span>59</span>
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
-  <div class="product">
-    <a href="#" class="pro">
-      <img src="assets/images/test.jpg"  alt="">
-      <div class="des">
-        <span class="titreEnchere">Test phrase longue</span>
-        <p>$ 10</p>
-        <div class="timer">
-          <span>03</span>
-          <span>:</span>
-          <span>30</span>
-          <span>:</span>
-          <span>59</span>
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
-  <div class="product">
-    <a href="#" class="pro">
-      <img src="assets/images/test.jpg"  alt="">
-      <div class="des">
-        <span class="titreEnchere">Test phrase longue</span>
-        <p>$ 10</p>
-        <div class="timer">
-          <span>03</span>
-          <span>:</span>
-          <span>30</span>
-          <span>:</span>
-          <span>59</span>
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
-  <div class="product">
-    <a href="#" class="pro">
-      <img src="assets/images/test.jpg"  alt="">
-      <div class="des">
-        <span class="titreEnchere">Test phrase longue</span>
-        <p>$ 10</p>
-        <div class="timer">
-          <span>03</span>
-          <span>:</span>
-          <span>30</span>
-          <span>:</span>
-          <span>59</span>
-        </div>
-
-      </div>
-
-    </a>
-
-  </div>
 
 
-</div>
 
-
-</body>
-
-<router-outlet></router-outlet>
-
-</html>
 
 
