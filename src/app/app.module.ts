@@ -13,12 +13,9 @@ import {AuctionHubComponent} from "./auction-hub/auction-hub.component";
 import {AuctionListComponent} from "./auction-hub/auction-list/auction-list.component";
 import {HttpClientModule} from "@angular/common/http";
 import { AuctionDetailComponent } from './auction-hub/auction-detail/auction-detail.component';
-import {RouterLink, RouterOutlet} from "@angular/router";
-import {AppRoutingModule} from "./app-routing.module";
-import {Router, RouterLink, RouterLinkActive} from "@angular/router";
+import {RouterLink, RouterOutlet, RouterLinkActive, Router} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { FormAddAuctionComponent } from './form-add-auction/form-add-auction.component';
-import {HttpClientModule} from "@angular/common/http";
 import {MenuAuctionComponent} from "./menu-auction/menu-auction.component";
 import { MenuUserComponent } from './menu-user/menu-user.component';
 
@@ -35,8 +32,7 @@ import { MenuUserComponent } from './menu-user/menu-user.component';
     PageAccueilComponent,
     AuctionHubComponent,
     AuctionListComponent,
-    AuctionDetailComponent
-    PageAccueilComponent,
+    AuctionDetailComponent,
     FormAddAuctionComponent,
     MenuAuctionComponent,
     MenuUserComponent
@@ -50,11 +46,7 @@ import { MenuUserComponent } from './menu-user/menu-user.component';
     RouterLinkActive,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule,
-    HttpClientModule,
-    RouterLink,
     RouterOutlet,
-    AppRoutingModule
   ],
   providers: [],
   exports: [
