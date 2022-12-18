@@ -13,6 +13,7 @@ import {Router, RouterLink, RouterLinkActive} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { FormAddAuctionComponent } from './form-add-auction/form-add-auction.component';
 import {HttpClientModule} from "@angular/common/http";
+import {MenuAuctionComponent} from "./menu-auction/menu-auction.component";
 
 
 
@@ -25,7 +26,8 @@ import {HttpClientModule} from "@angular/common/http";
     LoginComponent,
     InscriptionComponent,
     PageAccueilComponent,
-    FormAddAuctionComponent
+    FormAddAuctionComponent,
+    MenuAuctionComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +37,7 @@ import {HttpClientModule} from "@angular/common/http";
     RouterLink,
     RouterLinkActive,
     HttpClientModule,
-    FormsModule,
-
+    FormsModule
   ],
   providers: [],
   exports: [

@@ -1,15 +1,18 @@
-<div class="pro-container">
+<div *ngIf="auction; else auctionNotFound" class="pro-container">
   <div class="product">
       <img src="assets/images/test.jpg"  alt="L'image du produit ne peut pas etre afficher">
       <div>
-        <p>prix: 35$</p>
-        <p></p>
+        <br>
+        <p>Titre : {{auction.title}}</p>
+        <br>
+        <p>Description du produit:
+            {{auction.descri}}
+        </p>
+        <br>
+        <p>{{auction.price}}€</p>
+        <br>
         <div>
-          <span>03</span>
-          <span>:</span>
-          <span>30</span>
-          <span>:</span>
-          <span>59</span>
+          {{auction.timer}}
         </div>
       </div>
     <button class="btn btn-primary">Enchérir</button>
@@ -17,3 +20,6 @@
   </div>
 
 </div>
+<ng-template #auctionNotFound>
+  l'enchère n'a pas été trouvé.
+</ng-template>
