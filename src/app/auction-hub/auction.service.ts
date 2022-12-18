@@ -10,7 +10,7 @@ import {DtoOutputCreateAuction} from "./dtos/dto-output-create-auction";
 })
 export class AuctionService {
 
-  private static readonly ENTRY_POINT = environment.apiUrl
+  private static readonly ENTRY_POINT = environment.apiUrl + "/auctions"
 
   constructor(private _httpClient: HttpClient) {
   }
@@ -26,5 +26,10 @@ export class AuctionService {
   create(dto: DtoOutputCreateAuction): Observable<DtoInputAuction> {
     return this._httpClient.post<DtoInputAuction>(AuctionService.ENTRY_POINT, dto);
   }
+
+  fetchById(id: number): Observable<DtoInputAuction> {
+    return this._httpClient.get<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/${id}`);
+  }
+
 
 }

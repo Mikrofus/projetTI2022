@@ -1,19 +1,40 @@
-.form-floating{
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+
+.form-floating {
   border-radius: 3px;
   width: auto;
   display: block;
 }
-h2{
+
+h2 {
   text-align: center;
   text-decoration: underline;
 }
-h1{
+
+h1 {
   text-align: center;
 }
 
-ul{
+ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
   padding: 0;
 }
+
+#pageComplete {
+
+  min-width: 100%;
+  min-height: 100%;
+  background-color: red;
+
+}
+
+
+
