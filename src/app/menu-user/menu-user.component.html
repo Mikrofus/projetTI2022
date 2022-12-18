@@ -1,0 +1,51 @@
+<div class="bg">
+  <h1>Profil d'utilisateur</h1>
+  <img src="assets/img/pp.png" id="ProfilePic" alt="profile picture" class="center">
+  <br><br>
+  <span id="speudo">pseudo</span>
+  <br>
+  <h1>historique d'achat</h1>
+
+  <table class="tableau">
+    <thead>
+    <tr>
+      <th>Nom </th>
+      <th>Prix </th>
+      <th>Etat </th>
+      <th>Paiement bouton</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+      <td>Contenu 1</td>
+      <td>Contenu 2</td>
+      <td>Contenu 3</td>
+      <td><button (click)="pay(value)" class="btn">${{value}}</button></td>
+    </tr>
+
+    <tr>
+      <td>Contenu 1</td>
+      <td>Contenu 2</td>
+      <td>Contenu 3</td>
+      <td><button (click)="pay(value)" class="btn">${{value}}</button></td>
+    </tr>
+
+    <tr>
+      <td>Contenu 1</td>
+      <td><span>{{value}}</span></td>
+      <td>payé</td>
+      <td><button (click)="pay(value)" class="btn">${{value}}</button></td>
+    </tr>
+
+    <tr>
+      <td>Contenu 1</td>
+      <td><span>{{value}}</span></td>
+      <td>A payer</td>
+      <td><button (click)="pay(value)" class="btn">${{value}}</button></td>
+    </tr>
+
+    </tbody>
+  </table>
+  <button routerLink="" routerLinkActive="active" class="btn">Retour</button>
+</div>

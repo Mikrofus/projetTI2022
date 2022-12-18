@@ -1,0 +1,77 @@
+#coin{
+
+  width: 75px;
+  height: 75px;
+}
+
+#ProfilePic{
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 150px;
+  color: white;
+  border-radius: 100%;
+}
+
+h1, span{
+  text-align: center;
+  color: whitesmoke;
+}
+
+#speudo, #count{
+  margin-left : 43%;
+  width: 50%;
+  font-size: 50px;
+  text-align: center;
+}
+
+.bg{
+  background: linear-gradient(#13181d, #20212e, #341b47);
+}
+
+
+.btn{
+  width: 125px;
+  height: 40px;
+  border-radius: 50px;
+  background: linear-gradient(#3a4756, #3c4050, #5b307a);
+  border-color: #d9d4d4;
+  color: #d9d4d4;
+}
+
+.tableau{
+  border-collapse: collapse;
+  min-width: 500px;
+  width: auto;
+  box-shadow: 0 3px 3px rgb(78, 29, 140);
+  cursor: pointer;
+  margin: 50px auto;
+  border: 2px solid #4e1d8c;
+}
+
+thead tr{
+  background: linear-gradient(#3a4756, #3c4050, #5b307a);
+  color: white;
+  text-align: left;
+
+}
+
+th, td{
+  padding: 15px 20px;
+
+}
+
+tbody tr, td, th{
+  border: 1px solid lightgrey;
+
+}
+
+tbody tr:nth-child(even){
+  background-color: #ad77d7;
+}
+
+tbody tr:nth-child(odd){
+  background-color: #ba99e7;
+}

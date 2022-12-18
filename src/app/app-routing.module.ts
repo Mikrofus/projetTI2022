@@ -7,6 +7,7 @@ import {PageDaccueilComponent} from "./page-daccueil/page-daccueil.component";
 import {PageAccueilComponent} from "./page-accueil/page-accueil.component";
 import {InscriptionComponent} from "./inscription/inscription.component";
 import {FormAddAuctionComponent} from "./form-add-auction/form-add-auction.component";
+import {MenuUserComponent} from "./menu-user/menu-user.component";
 
 
 
@@ -24,6 +25,9 @@ const routes:Routes=[
   },
   {
     path:"addAuction", component:FormAddAuctionComponent
+  },
+  {
+    path:"menuUser", component:MenuUserComponent
   }
 
 
