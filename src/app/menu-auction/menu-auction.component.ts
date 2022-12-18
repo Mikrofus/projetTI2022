@@ -19,7 +19,18 @@ export class MenuAuctionComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    this._route.paramMap.subscribe(args =>{
+      if(args.has("id")){
+        const id = Number(args.get("id"));
+        this.fetchAuctionData(id);
+      }
+    })
+  }
 
+  private fetchAuctionData(id: number){
+    this._auctionService
+      .fetchById(id)
+      .subscribe(aunction => this.auction = aunction);
   }
 
 }
