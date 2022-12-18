@@ -15,7 +15,7 @@
   <ul *ngIf="isConnected == true; else elseBlock" class="navbar">
 
     <li><fa-icon [icon] ="faMagnifyingGlass"></fa-icon><input type="text" class="barreRecherche" placeholder="Recherche" /></li>
-    <li><fa-icon [icon]="faUserPlus"></fa-icon> <a routerLink="">S'inscrire</a> </li>
+    <li><fa-icon [icon]="faUserPlus"></fa-icon> <a routerLink="/register">S'inscrire</a> </li>
     <li><fa-icon [icon]="faUser"></fa-icon> <a routerLink="/login" routerLinkActive="active" >S'identifier</a></li>
 
   </ul>
@@ -23,8 +23,9 @@
     <ul class="navbar">
 
       <li><fa-icon [icon] ="faMagnifyingGlass"></fa-icon><input type="text" class="barreRecherche" placeholder="Recherche" /></li>
-      <li><a routerLink="/form-add-auction" routerLinkActive="active">Ajouter</a> </li>
+      <li><a routerLink="/addAuction" routerLinkActive="active">Ajouter</a> </li>
       <li><a routerLink="" routerLinkActive="active" >Profile</a></li>
+      <li><a routerLink="" routerLinkActive="active">Déconnexion</a></li>
 
     </ul>
   </ng-template>
