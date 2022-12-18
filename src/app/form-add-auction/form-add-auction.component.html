@@ -1,4 +1,4 @@
-<div *ngIf="user; else userNotFound">
+<div>
   <div>
     <div>
       <form [formGroup]="form" (ngSubmit)="emitAuctionCreated()">
@@ -9,37 +9,37 @@
             vous n'avez pas entrez de nom pour votre produit.
           </div>
           <br>
-          <textarea cols="20" rows="2" wrap="hard" formControl="descri">Entrer la descrition du produit :</textarea>
+          <textarea cols="20" rows="2" wrap="hard" formControlName="descri">Entrer la descrition du produit :</textarea>
           <div *ngIf="descriControl.dirty && descriControl.invalid">
-            vous n'avez pas entrez de nom pour votre produit.
+            vous n'avez pas entrez de description pour votre produit.
           </div>
           <br>
           <label>Categorie de produit:</label>
-          <select formControl="category">
+          <select formControlName="category">
             <option value="homeAppliance">Electroménager</option>
             <option value="electronics">Appareils électroniques</option>
             <option value="vehicle">Véhicule</option>
           </select>
           <div *ngIf="categoryControl.dirty && categoryControl.invalid">
-            vous n'avez pas entrez de nom pour votre produit.
+            vous n'avez pas entrez de catégorie pour votre produit.
           </div>
           <br>
           <label>Entrez l'image de votre produit :</label><br>
-          <input type="file" formControl="img">
+          <input type="file" formControlName="img">
           <div *ngIf="imgControl.dirty && imgControl.invalid">
-            vous n'avez pas entrez de nom pour votre produit.
+            vous n'avez pas entrez d'image pour votre produit.
           </div>
           <br>
           <label>Entrez Prix de départ du produit :</label><br>
-          <input type="number" placeholder="1.0" step="5" min="1" formControl="price"> €
+          <input type="number" placeholder="1.0" step="5" min="1" formControlName="price"> €
           <div *ngIf="priceControl.dirty && priceControl.invalid">
-            vous n'avez pas entrez de nom pour votre produit.
+            vous n'avez pas entrez de prix pour votre produit.
           </div>
           <br>
           <label>Entrez La date din de la mise en vente :</label><br>
-          <input type="date" formControl="timer">
+          <input type="date" formControlName="timer">
           <div *ngIf="timerControl.dirty && timerControl.invalid">
-            vous n'avez pas entrez de nom pour votre produit.
+            vous n'avez pas entrez de date pour votre produit.
           </div>
           <br><br>
           <input type="submit" [disabled]="form.invalid">
@@ -50,8 +50,5 @@
     </div>
   </div>
 </div>
-<ng-template #userNotFound>
-  <span>Vous ne pouvez pas  acceder à cette page. si vous n'êtes pas connecté !!</span>
-  <button class="btn btn-primary" routerLink="/login" routerLinkActive="active">Retour</button>
-</ng-template>
+
 
