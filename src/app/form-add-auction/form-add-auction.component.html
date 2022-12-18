@@ -1,54 +1,65 @@
-<div>
-  <div>
-    <div>
-      <form [formGroup]="form" (ngSubmit)="emitAuctionCreated()">
-        <div>
-          <label>Nom du produit :</label><br>
-          <input type="text" formControlName="title">
-          <div *ngIf="titleControl.dirty && titleControl.invalid">
-            vous n'avez pas entrez de nom pour votre produit.
-          </div>
-          <br>
-          <textarea cols="20" rows="2" wrap="hard" formControlName="descri">Entrer la descrition du produit :</textarea>
-          <div *ngIf="descriControl.dirty && descriControl.invalid">
-            vous n'avez pas entrez de description pour votre produit.
-          </div>
-          <br>
-          <label>Categorie de produit:</label>
-          <select formControlName="category">
-            <option value="homeAppliance">Electroménager</option>
-            <option value="electronics">Appareils électroniques</option>
-            <option value="vehicle">Véhicule</option>
-          </select>
-          <div *ngIf="categoryControl.dirty && categoryControl.invalid">
-            vous n'avez pas entrez de catégorie pour votre produit.
-          </div>
-          <br>
-          <label>Entrez l'image de votre produit :</label><br>
-          <input type="file" formControlName="img">
-          <div *ngIf="imgControl.dirty && imgControl.invalid">
-            vous n'avez pas entrez d'image pour votre produit.
-          </div>
-          <br>
-          <label>Entrez Prix de départ du produit :</label><br>
-          <input type="number" placeholder="1.0" step="5" min="1" formControlName="price"> €
-          <div *ngIf="priceControl.dirty && priceControl.invalid">
-            vous n'avez pas entrez de prix pour votre produit.
-          </div>
-          <br>
-          <label>Entrez La date din de la mise en vente :</label><br>
-          <input type="date" formControlName="timer">
-          <div *ngIf="timerControl.dirty && timerControl.invalid">
-            vous n'avez pas entrez de date pour votre produit.
-          </div>
-          <br><br>
-          <input type="submit" [disabled]="form.invalid">
-          <button class="btn btn-primary" type="button" (click)="resetForm()">Vider Formulaire</button>
-          <button class="btn btn-primary" routerLink="/root" routerLinkActive="active">Retour</button>
-        </div>
-      </form>
-    </div>
+<h2>Ajouter un produit.</h2>
+
+<form class="row gy-2 gx-3 align-items-center" [formGroup]="form" (ngSubmit)="emitAuctionCreated()">
+  <div class="col-auto">
+    <label class="form-label">Nom du produit :</label>
+    <input type="text" formControlName="title" class="form-control" placeholder="Ordinateur portable">
+    <span *ngIf="titleControl.dirty && titleControl.invalid"> Le nom du produit ne peut être vide !</span>
   </div>
-</div>
+
+  <hr>
+
+  <div class="col-auto">
+    <label class="form-label">Categorie de produit:</label>
+    <select class="form-select" formControlName="category">
+      <option value="homeAppliance">Electroménager</option>
+      <option value="electronics">Appareil électronique</option>
+      <option value="vehicle">Véhicule</option>
+      <option value="table">Cuisine</option>
+      <option value="jewelry">Bijou</option>
+      <option value="clothes">Vêtemen</option>
+      <option value="other">Autre</option>
+    </select>
+    <span *ngIf="categoryControl.untouched">Précisez une catégorie !</span>
+  </div>
+
+
+  <div class="col-auto">
+    <label class="form-label">Description du produit :</label>
+    <textarea formControlName="descri" class="form-control" placeholder="Ordinateur de la marque ..."></textarea>
+    <span *ngIf="(descriControl.dirty && descriControl.invalid) || descriControl.untouched">Veuillez décrire un minimum le produit !</span>
+  </div>
+
+  <hr>
+
+  <div class="col-auto">
+    <label class="form-label">Choisir une image pour le produit :</label>
+    <br>
+    <input type="file" formControlName="img">
+    <span *ngIf="imgControl.untouched || imgControl.invalid">Veuillez introduire une image !</span>
+  </div>
+
+  <hr>
+
+  <div class="col-auto">
+    <label class="form-label">Prix de départ :</label><br>
+    <input type="number" min="0" step="5" formControlName="price" value="5">€
+  </div>
+
+  <hr>
+
+  <div class="col-auto">
+    <label class="form-label">Durée de la vente :</label>
+    <input type="time" class="form-control" formControlName="timer">
+    <span *ngIf="timerControl.untouched">Le temps par défaut sera de 24h.</span>
+  </div>
+
+  <input type="submit" [disabled]="form.invalid">
+  <button class="btn btn-primary" type="button" (click)="resetForm()">Vider Formulaire</button>
+  <button class="btn btn-primary" routerLink="/root" routerLinkActive="active">Retour</button>
+</form>
+
+
+
 
 
