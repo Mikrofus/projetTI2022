@@ -14,12 +14,12 @@ export class FormAddAuctionComponent implements  OnInit {
   AuctionCreated: EventEmitter<DtoOutputCreateAuction> = new EventEmitter<DtoOutputCreateAuction>();
 
   form: FormGroup = this._fb.group({
-    title: ['', Validators.required],
-    descri: ['', Validators.required],
-    category: ['',Validators.required],
-    img: ['',Validators.required],
-    price: [0,[Validators.required, Validators.min(1)]],
-    timer: ['',Validators.required]
+    title: this._fb.control('', Validators.required),
+    descri: this._fb.control('', [Validators.required,Validators.minLength(5)]),
+    category:this._fb.control ('',Validators.required),
+    img: this._fb.control('',Validators.required),
+    price:this._fb.control(0,[Validators.required, Validators.min(0)]),
+    timer : this._fb.control('24:00')
   });
 
   ngOnInit(): void {
