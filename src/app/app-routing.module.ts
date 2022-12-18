@@ -8,6 +8,7 @@ import {PageDaccueilComponent} from "./page-daccueil/page-daccueil.component";
 import {AuctionHubComponent} from "./auction-hub/auction-hub.component";
 import {AuctionListComponent} from "./auction-hub/auction-list/auction-list.component";
 import {AuctionDetailComponent} from "./auction-hub/auction-detail/auction-detail.component";
+import {InscriptionComponent} from "./inscription/inscription.component";
 
 
 const routes:Routes=[
@@ -18,11 +19,15 @@ const routes:Routes=[
     path:'detail/:auctionId',component:AuctionDetailComponent
   },
   {
-    path:'login',component:PageDaccueilComponent
+    path:'login',component:LoginComponent
+  },
+  {
+    path:'inscription',component:InscriptionComponent
   },
   {
     path:'', component:AuctionHubComponent
   }
+
 ];
 
 
