@@ -14,6 +14,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { FormAddAuctionComponent } from './form-add-auction/form-add-auction.component';
 import {HttpClientModule} from "@angular/common/http";
 import {MenuAuctionComponent} from "./menu-auction/menu-auction.component";
+import { MenuUserComponent } from './menu-user/menu-user.component';
 
 
 
@@ -27,7 +28,8 @@ import {MenuAuctionComponent} from "./menu-auction/menu-auction.component";
     InscriptionComponent,
     PageAccueilComponent,
     FormAddAuctionComponent,
-    MenuAuctionComponent
+    MenuAuctionComponent,
+    MenuUserComponent
   ],
   imports: [
     BrowserModule,
