@@ -11,6 +11,7 @@ import {AuctionDetailComponent} from "./auction-hub/auction-detail/auction-detai
 import {InscriptionComponent} from "./inscription/inscription.component";
 
 
+
 const routes:Routes=[
   {
     path:'list',component:AuctionListComponent
