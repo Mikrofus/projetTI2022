@@ -1,8 +1,7 @@
 import { Component,EventEmitter,OnInit,Output } from '@angular/core';
 import {DtoOutputCreateAuction} from "../auction-hub/dtos/dto-output-create-auction";
 import {FormBuilder,FormGroup,Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
-import {environment} from "../../environments/environment";
+import {ServiceAddAuctionService} from "./service-add-auction.service";
 
 
 @Component({
@@ -12,7 +11,7 @@ import {environment} from "../../environments/environment";
 })
 export class FormAddAuctionComponent implements  OnInit {
 
-  private static readonly ENTRY_POINT = environment.apiUrl + "/auctions"
+  auctions: DtoOutputCreateAuction[] = [];
 
   @Output()
   AuctionCreated: EventEmitter<DtoOutputCreateAuction> = new EventEmitter<DtoOutputCreateAuction>();
@@ -29,7 +28,7 @@ export class FormAddAuctionComponent implements  OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private _fb: FormBuilder, private http : HttpClient) {
+  constructor(private _fb: FormBuilder, private _addAuctionService : ServiceAddAuctionService) {
 
   }
 
@@ -43,7 +42,6 @@ export class FormAddAuctionComponent implements  OnInit {
       price: this.form.value.price,
       timer: this.form.value.timer
     });
-    this.http.post(FormAddAuctionComponent.ENTRY_POINT, this.form);
     this.form.reset();
   }
 
@@ -73,6 +71,10 @@ export class FormAddAuctionComponent implements  OnInit {
 
   resetForm(){
     this.form.reset();
+  }
+
+  create(dto:DtoOutputCreateAuction){
+    this._addAuctionService.create(dto).subscribe(auction=>this.auctions.push(auction));
   }
 
 
