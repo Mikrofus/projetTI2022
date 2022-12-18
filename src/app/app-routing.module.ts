@@ -9,6 +9,7 @@ import {AuctionHubComponent} from "./auction-hub/auction-hub.component";
 import {AuctionListComponent} from "./auction-hub/auction-list/auction-list.component";
 import {AuctionDetailComponent} from "./auction-hub/auction-detail/auction-detail.component";
 import {InscriptionComponent} from "./inscription/inscription.component";
+import {AddAuctionComponent} from "./form-add-auction/add-auction/add-auction.component";
 
 
 const routes:Routes=[
@@ -26,6 +27,9 @@ const routes:Routes=[
   },
   {
     path:'', component:AuctionHubComponent
+  },
+  {
+    path:'add',component:AddAuctionComponent
   }
 ];
 

@@ -18,6 +18,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { FormAddAuctionComponent } from './form-add-auction/form-add-auction.component';
 import {MenuAuctionComponent} from "./menu-auction/menu-auction.component";
 import { MenuUserComponent } from './menu-user/menu-user.component';
+import { AddAuctionComponent } from './form-add-auction/add-auction/add-auction.component';
 
 
 
@@ -35,7 +36,8 @@ import { MenuUserComponent } from './menu-user/menu-user.component';
     AuctionDetailComponent,
     FormAddAuctionComponent,
     MenuAuctionComponent,
-    MenuUserComponent
+    MenuUserComponent,
+    AddAuctionComponent
   ],
   imports: [
     BrowserModule,

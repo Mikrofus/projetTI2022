@@ -11,7 +11,7 @@ import {ServiceAddAuctionService} from "./service-add-auction.service";
 })
 export class FormAddAuctionComponent implements  OnInit {
 
-  auctions: DtoOutputCreateAuction[] = [];
+
 
   @Output()
   AuctionCreated: EventEmitter<DtoOutputCreateAuction> = new EventEmitter<DtoOutputCreateAuction>();
@@ -28,7 +28,7 @@ export class FormAddAuctionComponent implements  OnInit {
   ngOnInit(): void {
   }
 
-  constructor(private _fb: FormBuilder, private _addAuctionService : ServiceAddAuctionService) {
+  constructor(private _fb: FormBuilder) {
 
   }
 
@@ -42,7 +42,7 @@ export class FormAddAuctionComponent implements  OnInit {
       price: this.form.value.price,
       timer: this.form.value.timer
     });
-    this.form.reset();
+    // this.form.reset();
   }
 
   get titleControl(){
@@ -73,9 +73,6 @@ export class FormAddAuctionComponent implements  OnInit {
     this.form.reset();
   }
 
-  create(dto:DtoOutputCreateAuction){
-    this._addAuctionService.create(dto).subscribe(auction=>this.auctions.push(auction));
-  }
 
 
 
