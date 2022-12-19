@@ -20,7 +20,7 @@ export class AuctionService {
   }
 
   create(dto: DtoOutputCreateAuction): Observable<DtoInputAuction> {
-    return this._httpClient.post<DtoInputAuction>(AuctionService.ENTRY_POINT, dto);
+    return this._httpClient.post<DtoInputAuction>(AuctionService.ENTRY_POINT+"/create", dto);
   }
 
   fetchById(id: number): Observable<DtoInputAuction> {

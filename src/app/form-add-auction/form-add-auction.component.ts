@@ -36,13 +36,13 @@ export class FormAddAuctionComponent implements  OnInit {
   emitAuctionCreated() {
     this.AuctionCreated.next({
       idUser: 1,
-      title: "this.form.value.title",
-      category: "this.form.value.category",
-      descri: "this.form.value.descri",
-      img: "this.form.value.img",
-      price: 15,
+      title: this.form.value.title,
+      category: this.form.value.category,
+      descri: this.form.value.descri,
+      img: this.form.value.img,
+      price: this.form.value.price,
       idUserBid : 1,
-      timer: this.dateString
+      timer: this.form.value.timer
     });
     console.log(this.dateString)
     // this.form.reset();
