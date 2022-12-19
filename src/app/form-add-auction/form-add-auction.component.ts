@@ -1,7 +1,6 @@
 import { Component,EventEmitter,OnInit,Output } from '@angular/core';
 import {DtoOutputCreateAuction} from "../auction-hub/dtos/dto-output-create-auction";
 import {FormBuilder,FormGroup,Validators} from "@angular/forms";
-import {ServiceAddAuctionService} from "./service-add-auction.service";
 
 
 @Component({
@@ -9,12 +8,13 @@ import {ServiceAddAuctionService} from "./service-add-auction.service";
   templateUrl: './form-add-auction.component.html',
   styleUrls: ['./form-add-auction.component.css']
 })
+
 export class FormAddAuctionComponent implements  OnInit {
-
-
-
   @Output()
   AuctionCreated: EventEmitter<DtoOutputCreateAuction> = new EventEmitter<DtoOutputCreateAuction>();
+
+  date : Date = new Date(2022,12,24,23,59,59);
+  dateString : string = this.date.toISOString();
 
   form: FormGroup = this._fb.group({
     title: this._fb.control('', Validators.required),
@@ -22,7 +22,8 @@ export class FormAddAuctionComponent implements  OnInit {
     category:this._fb.control ('',Validators.required),
     img: this._fb.control('',Validators.required),
     price:this._fb.control(0,[Validators.required, Validators.min(0)]),
-    timer : this._fb.control('24:00')
+    idUserBid:this._fb.control(''),
+    timer : this._fb.control('')
   });
 
   ngOnInit(): void {
@@ -34,14 +35,16 @@ export class FormAddAuctionComponent implements  OnInit {
 
   emitAuctionCreated() {
     this.AuctionCreated.next({
-      id_user: 1,
+      idUser: 1,
       title: this.form.value.title,
       category: this.form.value.category,
       descri: this.form.value.descri,
       img: this.form.value.img,
       price: this.form.value.price,
+      idUserBid : 1,
       timer: this.form.value.timer
     });
+    console.log(this.dateString)
     // this.form.reset();
   }
 
@@ -67,6 +70,10 @@ export class FormAddAuctionComponent implements  OnInit {
 
   get timerControl(){
     return this.form.controls['timer'];
+  }
+
+  get idUserBid(){
+    return this.form.controls['idUserBid'];
   }
 
   resetForm(){

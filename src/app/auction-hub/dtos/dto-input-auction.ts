@@ -1,10 +1,11 @@
 export interface DtoInputAuction {
   id: number;
-  id_user: number;
+  idUser: number;
   title: string;
   category: string;
   descri: string;
   img: string;
   price: number;
-  timer: Date;
+  idUserBid : number;
+  timer: string;
 }
