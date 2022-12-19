@@ -6,5 +6,5 @@ export interface DtoOutputCreateAuction {
   img: string;
   price: number;
   idUserBid : number;
-  timer: Date;
+  timer: Date ;
 }

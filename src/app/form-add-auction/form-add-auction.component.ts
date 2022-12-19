@@ -8,8 +8,12 @@ import {FormBuilder,FormGroup,Validators} from "@angular/forms";
   templateUrl: './form-add-auction.component.html',
   styleUrls: ['./form-add-auction.component.css']
 })
+
 export class FormAddAuctionComponent implements  OnInit {
 
+
+
+  date : Date = new Date(2022,12,24,23,59,59);
 
 
   @Output()
@@ -22,7 +26,7 @@ export class FormAddAuctionComponent implements  OnInit {
     img: this._fb.control('',Validators.required),
     price:this._fb.control(0,[Validators.required, Validators.min(0)]),
     idUserBid:this._fb.control('1'),
-    timer : this._fb.control('24:00')
+    timer : this._fb.control('')
   });
 
   ngOnInit(): void {
@@ -35,13 +39,13 @@ export class FormAddAuctionComponent implements  OnInit {
   emitAuctionCreated() {
     this.AuctionCreated.next({
       id_user: 1,
-      title: this.form.value.title,
-      category: this.form.value.category,
-      descri: this.form.value.descri,
-      img: this.form.value.img,
-      price: this.form.value.price,
-      idUserBid : this.form.value.idUserBid,
-      timer: this.form.value.timer
+      title: 'this.form.value.title',
+      category: 'this.form.value.category',
+      descri: 'this.form.value.descri',
+      img: 'this.form.value.img',
+      price: 15,
+      idUserBid : 1,
+      timer: this.date
     });
     // this.form.reset();
   }

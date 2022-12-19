@@ -14,7 +14,6 @@ describe('MenuUserComponent', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(MenuUserComponent);
-========
 import { AuctionDetailComponent } from './auction-detail.component';
 
 describe('AuctionDetailComponent', () => {
