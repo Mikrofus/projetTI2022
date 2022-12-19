@@ -1,7 +1,6 @@
 import { Component,EventEmitter,OnInit,Output } from '@angular/core';
 import {DtoOutputCreateAuction} from "../auction-hub/dtos/dto-output-create-auction";
 import {FormBuilder,FormGroup,Validators} from "@angular/forms";
-import {ServiceAddAuctionService} from "./service-add-auction.service";
 
 
 @Component({
@@ -22,6 +21,7 @@ export class FormAddAuctionComponent implements  OnInit {
     category:this._fb.control ('',Validators.required),
     img: this._fb.control('',Validators.required),
     price:this._fb.control(0,[Validators.required, Validators.min(0)]),
+    idUserBid:this._fb.control('1'),
     timer : this._fb.control('24:00')
   });
 
@@ -40,6 +40,7 @@ export class FormAddAuctionComponent implements  OnInit {
       descri: this.form.value.descri,
       img: this.form.value.img,
       price: this.form.value.price,
+      idUserBid : this.form.value.idUserBid,
       timer: this.form.value.timer
     });
     // this.form.reset();
@@ -67,6 +68,10 @@ export class FormAddAuctionComponent implements  OnInit {
 
   get timerControl(){
     return this.form.controls['timer'];
+  }
+
+  get idUserBid(){
+    return this.form.controls['idUserBid'];
   }
 
   resetForm(){

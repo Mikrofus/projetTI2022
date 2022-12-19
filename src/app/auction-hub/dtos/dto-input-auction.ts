@@ -6,5 +6,6 @@ export interface DtoInputAuction {
   descri: string;
   img: string;
   price: number;
+  idUserBid : number;
   timer: Date;
 }
