@@ -23,10 +23,10 @@ export class AuctionHubComponent implements OnInit {
   private fetchAll() {
     this._auctionService.fetchAll().subscribe(auctions => this.auctions = auctions);
   }
-
-  create(dto: DtoOutputCreateAuction) {
-    this._auctionService.create(dto).subscribe(auction => this.auctions.push(auction));
-  }
+  //
+  // create(dto: DtoOutputCreateAuction) {
+  //   this._auctionService.create(dto).subscribe(auction => this.auctions.push(auction));
+  // }
 
 }
 

@@ -18,7 +18,7 @@
         <option value="vehicle">Véhicule</option>
         <option value="table">Cuisine</option>
         <option value="jewelry">Bijou</option>
-        <option value="clothes">Vêtemen</option>
+        <option value="clothes">Vêtement</option>
         <option value="other">Autre</option>
       </select>
       <span *ngIf="categoryControl.untouched">Précisez une catégorie !</span>
@@ -55,7 +55,7 @@
       <span *ngIf="timerControl.untouched">Le temps par défaut sera de 24h.</span>
     </div>
 
-    <input type="submit" [disabled]="form.invalid">
+    <input type="submit" > <!--[disabled]="form.invalid"-->
     <button class="btn btn-primary" type="button" (click)="resetForm()">Vider Formulaire</button>
     <button class="btn btn-primary" routerLink="/root" routerLinkActive="active">Retour</button>
   </form>
