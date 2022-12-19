@@ -1,56 +1,147 @@
-*, ::before, ::after {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/*.container {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  border: 1px solid;*/
+/*}*/
 
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+
+  }
+  .zoneEnchere{
+    width: 100%;
+
+  }
+  .zoneDescription{
+    width: 100%;
+  }
+}
 
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border: 1px solid;
-  border-color: #d33bfd;
-  width: 80%;
-  height: 80%;
 
-}
-
-.imageEnchere {
   display: flex;
-  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+
+  height: 100%;
   width: 100%;
-  height:500px;
-  border: 1px solid;
-
-
+  gap:1rem;
+  color: white;
 
 }
+
+
 
 
 .zoneImage {
-  background-color: green;
-  width: 40%;
-  height: 300px;
 
 
+  width: 55%;
+  height: 25rem;
+
+}
+
+.zoneImage img{
+  width: 100%;
+  height: 100%;
 }
 
 .zoneEnchere {
-  background-color: aqua;
-  width: 40%;
-  height: 300px;
+  position: relative;
+  width: 42vh;
+  height: 25rem;
+  border: 3px solid #7211F0;
+  border-radius: 5px;
 
 
 }
 
+.zoneEnchere .timer{
+  position: absolute;
+  top: 3rem;
+  left: 10rem;
+
+}
+
+.zoneEnchere .timer .span{
+  font-size: 100px;
+}
+
+.zoneEnchere #encherisseurTexte{
+  position: absolute;
+  top: 7rem;
+  right: 3rem;
+}
+
+.zoneEnchere #offreTexte{
+  position: absolute;
+  top: 7rem;
+  left: 3rem;
+
+}
+
+.zoneBoutons{
+  position: relative;
+  top: 13rem;
+  left: 6.5rem;
+}
+
+.zoneBoutons #miser{
+  position: absolute;
+  left: 6rem;
+  height: 3rem;
+  width: 5rem;
+  border: 1px solid #7211F0;
+  background-color: #7211F0;
+  outline: none;
+}
+
+.zoneBoutons #offreEntree{
+  position: absolute;
+  width: 6rem;
+  height: 3rem;
+
+  border: 1px solid #7211F0;
+}
+
 .zoneDescription {
-  background-color: red;
-  height:200px;
-  width: 200px;
+  position: relative;
+
+  width: 55%;
+  height: 20rem;
 
 
+}
 
+.zoneDescription span{
+  position: absolute;
+  top:100px;
+}
+
+
+.descDetailUtilisateur{
+  display: flex;
+
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.detailUtilisateur{
+  background-color: yellow;
+  border: 1px solid green;
+  width: 30%;
 }

@@ -3,31 +3,43 @@
 
   <div class="container">
 
-    <div class="imageEnchere">
-
-      <div class="zoneImage">
-        Ici une image
+    <div class="zoneImage">
+      <img src="assets/images/hotel.jpg">
 
 
-        {{auction?.title}}
+    </div>
+
+    <div class="zoneEnchere">
+
+      <div class="timer">
+
+        <span>03</span>
+        <span>:</span>
+        <span>30</span>
+        <span>:</span>
+        <span>10</span>
+
       </div>
 
-      <div class="zoneEnchere">
-
-        <div>
-          zoneEnchere
-
-        </div>
-
+      <span id="offreTexte">Offre actuelle</span>
+      <span id="encherisseurTexte">Encherisseurs</span>
+      <span id="prixOffre">{{auction?.price}}</span>
+      <div class="zoneBoutons">
+        <input type="text" id="offreEntree" placeholder="Votre offre"><input value="Miser" type="button" id="miser">
       </div>
 
     </div>
 
     <div class="zoneDescription">
-      zoneDescription
+      <h2>{{auction?.title}}</h2>
+      <h6>Contenu de l'offre:</h6>
+      <span>{{auction?.descri}}</span>
+
 
     </div>
 
+
   </div>
+
 
 </main>

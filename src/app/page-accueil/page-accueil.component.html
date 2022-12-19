@@ -1,36 +1,36 @@
-
-
 <head>
-<title>Bazaar</title>
+  <title>Bazaar</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 
+<nav class="navbar">
+  <a routerLink="" class="brand-title"><img class="bazaar" id="titreSite" src="assets/images/Bazaar.png"></a>
+  <a href="#" class="toggle-button">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+  <input type="text" id="barreRecherche" placeholder="Recherche"/>
+  <div class="navbar-links">
+    <ul>
+
+      <li><a routerLink="login">S'identifier</a></li>
+      <li><a routerLink="inscription">S'inscrire</a></li>
+      <li><a routerLink="add">Ajout Enchere</a></li>
+    </ul>
+  </div>
+</nav>
 
 
-<header>
-  <a class="bazaar" routerLink="" class="titre"><img class="bazaar" id="titreSite" src="assets/images/Bazaar.png"></a>
 
-  <ul id="navbar">
-
-
-    <li><fa-icon [icon] = "faMagnifyingGlass"></fa-icon><input type="text" id="barreRecherche" placeholder="Recherche" /></li>
-    <li><fa-icon [icon]="faUserPlus"></fa-icon> <a routerLink="inscription">S'inscrire</a> </li>
-    <li><fa-icon [icon]="faUser"></fa-icon> <a routerLink="login">S'identifier</a></li>
-    <li><fa-icon [icon]="faUser"></fa-icon> <a routerLink="add">Ajouter</a></li>
-  </ul>
-
-</header>
 
 <nav class="filtres">
 
 
 
 </nav>
-
-
-
 
 
 
