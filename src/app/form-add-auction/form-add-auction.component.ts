@@ -10,14 +10,11 @@ import {FormBuilder,FormGroup,Validators} from "@angular/forms";
 })
 
 export class FormAddAuctionComponent implements  OnInit {
-
-
-
-  date : Date = new Date(2022,12,24,23,59,59);
-
-
   @Output()
   AuctionCreated: EventEmitter<DtoOutputCreateAuction> = new EventEmitter<DtoOutputCreateAuction>();
+
+  date : Date = new Date(2022,12,24,23,59,59);
+  dateString : string = this.date.toISOString();
 
   form: FormGroup = this._fb.group({
     title: this._fb.control('', Validators.required),
@@ -38,15 +35,16 @@ export class FormAddAuctionComponent implements  OnInit {
 
   emitAuctionCreated() {
     this.AuctionCreated.next({
-      id_user: 1,
-      title: 'this.form.value.title',
-      category: 'this.form.value.category',
-      descri: 'this.form.value.descri',
-      img: 'this.form.value.img',
+      idUser: 1,
+      title: "this.form.value.title",
+      category: "this.form.value.category",
+      descri: "this.form.value.descri",
+      img: "this.form.value.img",
       price: 15,
       idUserBid : 1,
-      timer: this.date
+      timer: this.dateString
     });
+    console.log(this.dateString)
     // this.form.reset();
   }
 
