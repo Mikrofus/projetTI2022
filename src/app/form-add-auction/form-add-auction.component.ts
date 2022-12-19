@@ -22,7 +22,7 @@ export class FormAddAuctionComponent implements  OnInit {
     category:this._fb.control ('',Validators.required),
     img: this._fb.control('',Validators.required),
     price:this._fb.control(0,[Validators.required, Validators.min(0)]),
-    idUserBid:this._fb.control('1'),
+    idUserBid:this._fb.control(''),
     timer : this._fb.control('')
   });
 

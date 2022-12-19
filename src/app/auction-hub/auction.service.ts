@@ -26,6 +26,4 @@ export class AuctionService {
   fetchById(id: number): Observable<DtoInputAuction> {
     return this._httpClient.get<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/${id}`);
   }
-
-
 }
