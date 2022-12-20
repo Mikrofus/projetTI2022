@@ -5,6 +5,10 @@ height:100%;
 }
 
 .full-height{
-  height: 100%;
+  height: max-content;
+  width:100%;
+  min-width:100%;
+  min-height: 100%;
+
   background: linear-gradient(#13181d, #20212e, #341b47);
 }
