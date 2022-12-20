@@ -31,4 +31,9 @@ export class AuctionService {
   {
     return this._httpClient.put<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/setTopBid/${idEnchere}`,{price:prix,idUserBid: idUser});
   }
+
+  update(dto: DtoOutputCreateAuction)
+  {
+    return this._httpClient.patch<DtoInputAuction>(AuctionService.ENTRY_POINT+"/setTopBid", dto);
+  }
 }
