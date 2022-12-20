@@ -19,6 +19,7 @@ import { FormAddAuctionComponent } from './form-add-auction/form-add-auction.com
 import {MenuAuctionComponent} from "./menu-auction/menu-auction.component";
 import { MenuUserComponent } from './menu-user/menu-user.component';
 import { AddAuctionComponent } from './form-add-auction/add-auction/add-auction.component';
+import { PiedPageComponent } from './pied-page/pied-page.component';
 
 
 
@@ -37,7 +38,8 @@ import { AddAuctionComponent } from './form-add-auction/add-auction/add-auction.
     FormAddAuctionComponent,
     MenuAuctionComponent,
     MenuUserComponent,
-    AddAuctionComponent
+    AddAuctionComponent,
+    PiedPageComponent
   ],
   imports: [
     BrowserModule,
