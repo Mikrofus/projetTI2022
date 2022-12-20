@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {AuctionService} from "../auction.service";
 import {DtoInputAuction} from "../dtos/dto-input-auction";
+import {DtoOutputCreateAuction} from "../dtos/dto-output-create-auction";
 
 @Component({
   selector: 'app-auction-detail',
@@ -22,14 +23,20 @@ export class AuctionDetailComponent {
       }
 
     });
+
+
   }
 
   fetchAuctionData(id: number) {
     this.service.fetchById(id).subscribe(auction => this.auction = auction);
   }
 
+  update(idEnchere:number, idUser: number, prix: number){
+    this.service.update(idEnchere,idUser,prix).subscribe();
+  }
 
 
-
-
+  updateAuction(idEnchere:number, idUser: number, prix: number) {
+    this.update(idEnchere,idUser,prix);
+  }
 }
