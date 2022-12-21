@@ -19,8 +19,8 @@ export class UserService {
     return this._httpClient.get<DtoInputUser[]>(UserService.ENTRY_POINT);
   }
 
-  fetchById(id: number): Observable<DtoInputUser> {
-    return this._httpClient.get<DtoInputUser>(`${UserService.ENTRY_POINT}/${id}`);
+  fetchById(): Observable<DtoInputUser> {
+    return this._httpClient.get<DtoInputUser>(`${UserService.ENTRY_POINT}/fetchById`);
   }
 
   create(dto: DtoOutputCreateUser): Observable<DtoInputUser> {
