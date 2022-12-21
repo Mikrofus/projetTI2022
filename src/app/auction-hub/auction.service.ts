@@ -4,6 +4,8 @@ import {HttpClient} from "@angular/common/http";
 import {DtoInputAuction} from "./dtos/dto-input-auction";
 import {Observable} from "rxjs";
 import {DtoOutputCreateAuction} from "./dtos/dto-output-create-auction";
+import {DtoOutputPatchAuction} from "./dtos/dto-output-patch-auction";
+
 
 @Injectable({
   providedIn: 'root'
@@ -27,13 +29,11 @@ export class AuctionService {
     return this._httpClient.get<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/${id}`);
   }
 
-  update(idEnchere:number, idUser: number, prix: number)
+  update(dto: DtoOutputPatchAuction): Observable<DtoInputAuction>
   {
-    return this._httpClient.put<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/setTopBid/${idEnchere}`,{price:prix,idUserBid: idUser});
+    console.log(dto)
+    return this._httpClient.patch<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/setTopBid/${dto.id}`, dto);
   }
 
-  update(dto: DtoOutputCreateAuction)
-  {
-    return this._httpClient.patch<DtoInputAuction>(AuctionService.ENTRY_POINT+"/setTopBid", dto);
-  }
+
 }

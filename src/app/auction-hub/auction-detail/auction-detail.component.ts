@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {AuctionService} from "../auction.service";
 import {DtoInputAuction} from "../dtos/dto-input-auction";
 import {DtoOutputCreateAuction} from "../dtos/dto-output-create-auction";
+import {DtoOutputPatchAuction} from "../dtos/dto-output-patch-auction";
 
 @Component({
   selector: 'app-auction-detail',
@@ -10,7 +11,8 @@ import {DtoOutputCreateAuction} from "../dtos/dto-output-create-auction";
   styleUrls: ['./auction-detail.component.css']
 })
 export class AuctionDetailComponent {
-  auction: DtoInputAuction | null = null;
+  auction: any = null;
+  auctionPatch : DtoOutputPatchAuction = {id: 43, price: 150, idUserBid: 1}
 
   constructor(private service: AuctionService, private route: ActivatedRoute) {
   }
@@ -20,6 +22,7 @@ export class AuctionDetailComponent {
       if (args.has("auctionId")) {
         const auctionId = Number(args.get("auctionId"));
         this.fetchAuctionData(auctionId);
+
       }
 
     });
@@ -31,12 +34,14 @@ export class AuctionDetailComponent {
     this.service.fetchById(id).subscribe(auction => this.auction = auction);
   }
 
-  update(idEnchere:number, idUser: number, prix: number){
-    this.service.update(idEnchere,idUser,prix).subscribe();
+  updateAuction(dto: DtoOutputPatchAuction){
+
+    this.service.update(dto).subscribe(auction => console.log(auction));
+
   }
 
 
-  updateAuction(idEnchere:number, idUser: number, prix: number) {
-    this.update(idEnchere,idUser,prix);
+  updateAuctionClick(dto: DtoOutputPatchAuction) {
+    this.updateAuction(dto);
   }
 }
