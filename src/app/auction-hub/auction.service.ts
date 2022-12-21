@@ -26,4 +26,9 @@ export class AuctionService {
   fetchById(id: number): Observable<DtoInputAuction> {
     return this._httpClient.get<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/${id}`);
   }
+
+  update(idEnchere:number, idUser: number, prix: number)
+  {
+    return this._httpClient.put<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/setTopBid/${idEnchere}`,{price:prix,idUserBid: idUser});
+  }
 }
