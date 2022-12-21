@@ -11,10 +11,13 @@ import {DtoOutputPatchAuction} from "../dtos/dto-output-patch-auction";
   styleUrls: ['./auction-detail.component.css']
 })
 export class AuctionDetailComponent {
-  auction: any = null;
-  auctionPatch : DtoOutputPatchAuction = {id: 43, price: 150, idUserBid: 1}
+  auction: any;
+
+  price: number = 0;
+  auctionPatch : DtoOutputPatchAuction = {id: 0, price: 0, idUserBid: 1}
 
   constructor(private service: AuctionService, private route: ActivatedRoute) {
+
   }
 
   ngOnInit(): void {
@@ -22,7 +25,7 @@ export class AuctionDetailComponent {
       if (args.has("auctionId")) {
         const auctionId = Number(args.get("auctionId"));
         this.fetchAuctionData(auctionId);
-
+        this.auctionPatch.id = auctionId;
       }
 
     });
@@ -32,6 +35,7 @@ export class AuctionDetailComponent {
 
   fetchAuctionData(id: number) {
     this.service.fetchById(id).subscribe(auction => this.auction = auction);
+
   }
 
   updateAuction(dto: DtoOutputPatchAuction){
@@ -42,6 +46,13 @@ export class AuctionDetailComponent {
 
 
   updateAuctionClick(dto: DtoOutputPatchAuction) {
+    dto.price = this.price;
     this.updateAuction(dto);
+    this.fetchAuctionData(dto.id);
+  }
+
+
+  updatePrice(price: number) {
+    this.price = price;
   }
 }
