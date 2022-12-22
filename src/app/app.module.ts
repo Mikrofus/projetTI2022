@@ -22,8 +22,6 @@ import { AddAuctionComponent } from './form-add-auction/add-auction/add-auction.
 import { PiedPageComponent } from './pied-page/pied-page.component';
 
 
-
-
 // @ts-ignore
 @NgModule({
   declarations: [

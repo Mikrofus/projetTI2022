@@ -5,6 +5,7 @@ import {DtoInputAuction} from "../dtos/dto-input-auction";
 import {DtoOutputCreateAuction} from "../dtos/dto-output-create-auction";
 import {DtoOutputPatchAuction} from "../dtos/dto-output-patch-auction";
 
+
 @Component({
   selector: 'app-auction-detail',
   templateUrl: './auction-detail.component.html',
@@ -13,8 +14,9 @@ import {DtoOutputPatchAuction} from "../dtos/dto-output-patch-auction";
 export class AuctionDetailComponent {
   auction: any;
 
+
   price: number = 0;
-  auctionPatch : DtoOutputPatchAuction = {id: 0, price: 0, idUserBid: 1}
+  auctionPatch: DtoOutputPatchAuction = {id: 0, price: 0, idUserBid: 1}
 
   constructor(private service: AuctionService, private route: ActivatedRoute) {
 
@@ -29,8 +31,6 @@ export class AuctionDetailComponent {
       }
 
     });
-
-
   }
 
   fetchAuctionData(id: number) {
@@ -38,7 +38,7 @@ export class AuctionDetailComponent {
 
   }
 
-  updateAuction(dto: DtoOutputPatchAuction){
+  updateAuction(dto: DtoOutputPatchAuction) {
 
     this.service.update(dto).subscribe(auction => console.log(auction));
 
