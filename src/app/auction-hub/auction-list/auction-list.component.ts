@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DtoInputAuction} from "../dtos/dto-input-auction";
 
+
 @Component({
   selector: 'app-auction-list',
   templateUrl: './auction-list.component.html',

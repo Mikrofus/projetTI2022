@@ -22,6 +22,7 @@ export class PageAccueilComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
