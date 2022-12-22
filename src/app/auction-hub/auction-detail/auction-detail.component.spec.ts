@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-
 import { AuctionDetailComponent } from './auction-detail.component';
 
 describe('AuctionDetailComponent', () => {
@@ -14,6 +13,7 @@ describe('AuctionDetailComponent', () => {
     .compileComponents();
 
     fixture = TestBed.createComponent(AuctionDetailComponent);
+
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

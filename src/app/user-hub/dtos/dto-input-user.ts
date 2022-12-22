@@ -1,5 +1,6 @@
 export interface DtoInputUser {
-  Id : number;
+  id : number;
   pseudo : string;
-  email : string;
+  mail : string;
+  pass : string;
 }

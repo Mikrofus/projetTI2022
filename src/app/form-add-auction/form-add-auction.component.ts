@@ -15,6 +15,13 @@ import {finalize, Observable, tap} from "rxjs";
 })
 
 export class FormAddAuctionComponent implements  OnInit {
+  public userTest: DtoInputUser = {
+    id: 0,
+    pseudo: "",
+    mail: "",
+    pass: ""
+  };
+
   @Output()
   AuctionCreated: EventEmitter<DtoOutputCreateAuction> = new EventEmitter<DtoOutputCreateAuction>();
 
@@ -22,12 +29,7 @@ export class FormAddAuctionComponent implements  OnInit {
   dateString : string = this.date.toISOString();
   url:any = "";
 
-  userTest: DtoInputUser = {
-    Id: 0,
-    pseudo: "test",
-    email: "test",
-    password: "test"
-  } ;
+
 
   form: FormGroup = this._fb.group({
     title: this._fb.control('', Validators.required),
@@ -39,41 +41,45 @@ export class FormAddAuctionComponent implements  OnInit {
     timer : this._fb.control('')
   });
 
-  ngOnInit(): void {
-
-    this.fetchById();
-
-  }
-
   constructor(private _fb: FormBuilder, private _userService: UserService) {
 
 
   }
 
+  ngOnInit(): void {
+
+    this._userService.fetchById()
+      .subscribe(u => this.userTest = u);
+
+
+
+  }
+
+
+
   emitAuctionCreated() {
-    // this.AuctionCreated.next({
-    //   idUser: 1,
-    //   title: this.form.value.title,
-    //   category: this.form.value.category,
-    //   descri: this.form.value.descri,
-    //   img: this.url,
-    //   price: this.form.value.price,
-    //   idUserBid : this.userTest.Id,
-    //   timer: this.form.value.timer
-    // });
+    this.AuctionCreated.next({
+      idUser: 1,
+      title: this.form.value.title,
+      category: this.form.value.category,
+      descri: this.form.value.descri,
+      img: this.url,
+      price: this.form.value.price,
+      idUserBid : this.userTest.id,
+      timer: this.form.value.timer
+    });
 
     console.log(this.userTest)
+   
 
-    console.log(this.form.value.img.value)
-    console.log(this.dateString)
+
     // this.form.reset();
   }
 
   private fetchById() {
-    this._userService.fetchById().pipe(
-      tap(u => this.userTest = u),
-      finalize(() => console.log(this.userTest))
-    ).subscribe();
+    this._userService.fetchById().subscribe(u => this.userTest = u);
+
+
 
   }
 

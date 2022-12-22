@@ -20,6 +20,9 @@ import {MenuAuctionComponent} from "./menu-auction/menu-auction.component";
 import { MenuUserComponent } from './menu-user/menu-user.component';
 import { AddAuctionComponent } from './form-add-auction/add-auction/add-auction.component';
 import { PiedPageComponent } from './pied-page/pied-page.component';
+import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
+import {TokenInterceptor, TokenInterceptorProvider} from "./user-hub/token.interceptor";
+import { CookieModule } from 'ngx-cookie'
 
 
 // @ts-ignore
@@ -37,7 +40,8 @@ import { PiedPageComponent } from './pied-page/pied-page.component';
     MenuAuctionComponent,
     MenuUserComponent,
     AddAuctionComponent,
-    PiedPageComponent
+    PiedPageComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -49,8 +53,9 @@ import { PiedPageComponent } from './pied-page/pied-page.component';
     HttpClientModule,
     FormsModule,
     RouterOutlet,
+    CookieModule.forRoot()
   ],
-  providers: [],
+  providers: [TokenInterceptorProvider],
   exports: [
     LoginComponent
   ],
