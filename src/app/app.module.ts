@@ -40,7 +40,8 @@ import { CookieModule } from 'ngx-cookie'
     MenuAuctionComponent,
     MenuUserComponent,
     AddAuctionComponent,
-    PiedPageComponent
+    PiedPageComponent,
+
   ],
   imports: [
     BrowserModule,

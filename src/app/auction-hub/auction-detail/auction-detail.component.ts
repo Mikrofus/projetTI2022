@@ -4,6 +4,8 @@ import {AuctionService} from "../auction.service";
 import {DtoInputAuction} from "../dtos/dto-input-auction";
 import {DtoOutputCreateAuction} from "../dtos/dto-output-create-auction";
 import {DtoOutputPatchAuction} from "../dtos/dto-output-patch-auction";
+import {UserService} from "../../user-hub/user.service";
+import {DtoInputUser} from "../../user-hub/dtos/dto-input-user";
 
 
 @Component({
@@ -13,12 +15,17 @@ import {DtoOutputPatchAuction} from "../dtos/dto-output-patch-auction";
 })
 export class AuctionDetailComponent {
   auction: any;
-
+  public user: DtoInputUser = {
+    id: 0,
+    pseudo: "",
+    mail: "",
+    pass: ""
+  };
 
   price: number = 0;
   auctionPatch: DtoOutputPatchAuction = {id: 0, price: 0, idUserBid: 1}
 
-  constructor(private service: AuctionService, private route: ActivatedRoute) {
+  constructor(private service: AuctionService, private route: ActivatedRoute, private _userService: UserService) {
 
   }
 
@@ -31,6 +38,11 @@ export class AuctionDetailComponent {
       }
 
     });
+
+    this._userService.fetchById()
+      .subscribe(u => this.user = u);
+
+
   }
 
   fetchAuctionData(id: number) {
@@ -45,8 +57,12 @@ export class AuctionDetailComponent {
   }
 
 
+
+
   updateAuctionClick(dto: DtoOutputPatchAuction) {
     dto.price = this.price;
+    dto.idUserBid = this.user.id;
+    console.log(dto.idUserBid);
     this.updateAuction(dto);
     this.fetchAuctionData(dto.id);
   }
