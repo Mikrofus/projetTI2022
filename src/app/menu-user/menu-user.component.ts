@@ -40,7 +40,7 @@ export class MenuUserComponent {
 
 
   fetchUserData(id: number) {
-    this.service.fetchById(id).subscribe(user => this.user = user);
+    //this.service.fetchById(id).subscribe(user => this.user = user);
   }
 
 
