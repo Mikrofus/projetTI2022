@@ -1,7 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DtoInputAuction} from "../dtos/dto-input-auction";
-import { Buffer } from 'buffer';
-
+import {environment} from "../../../environments/environment";
+import {AuctionService} from "../auction.service";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
+import {DtoAuctionTime} from "../dtos/dto-auction-time";
 
 
 @Component({
@@ -10,33 +13,22 @@ import { Buffer } from 'buffer';
   styleUrls: ['./auction-list.component.css']
 
 })
-export class AuctionListComponent{
+export class AuctionListComponent {
+
+
+  constructor(private _auctionService: AuctionService) {
+  }
+
+  deadLine: Date = new Date();
+  timeRemaining: string = '';
+
 
   @Input() auctions: DtoInputAuction[] = [];
-
-
-  constructor() {
-
-  }
 
 
 
   minutes: number = 0;
   seconds: number = 0;
   isPaused: boolean = false;
-
-  // btoa(img: string) {
-  //   console.log(window.btoa(img))
-  //   return window.btoa(img);
-  // }
-
-  // arrayBufferToBase64(arrayBuffer: string): string {
-  //   let binary = '';
-  //   const bytes = new Uint8Array(arrayBuffer);
-  //   const len = bytes.byteLength;
-  //   for (let i = 0; i < len; i++) {
-  //     binary += String.fromCharCode(bytes[i]);
-  //   }
-  //   return window.btoa(binary);
-  // }
 }
+

@@ -5,6 +5,7 @@ import {DtoInputAuction} from "./dtos/dto-input-auction";
 import {Observable} from "rxjs";
 import {DtoOutputCreateAuction} from "./dtos/dto-output-create-auction";
 import {DtoOutputPatchAuction} from "./dtos/dto-output-patch-auction";
+import {DtoAuctionTime} from "./dtos/dto-auction-time";
 
 
 @Injectable({
@@ -15,6 +16,10 @@ export class AuctionService {
   private static readonly ENTRY_POINT = environment.apiUrl + "/auctions"
 
   constructor(private _httpClient: HttpClient) {
+  }
+
+  fetchAll2(): Observable<DtoAuctionTime[]> {
+    return this._httpClient.get<DtoAuctionTime[]>(AuctionService.ENTRY_POINT);
   }
 
   fetchAll(): Observable<DtoInputAuction[]> {
@@ -34,6 +39,4 @@ export class AuctionService {
     console.log(dto)
     return this._httpClient.patch<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/setTopBid/${dto.id}`, dto);
   }
-
-
 }

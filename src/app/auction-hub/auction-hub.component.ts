@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {DtoInputAuction} from "./dtos/dto-input-auction";
 import {AuctionService} from "./auction.service";
-import {DtoOutputCreateAuction} from "./dtos/dto-output-create-auction";
 import {ActivatedRoute} from "@angular/router";
+import {DtoAuctionTime} from "./dtos/dto-auction-time";
 
 @Component({
   selector: 'app-auction-hub',
