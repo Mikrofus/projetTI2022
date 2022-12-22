@@ -1,6 +1,11 @@
 import { Component,EventEmitter,OnInit,Output } from '@angular/core';
 import {DtoOutputCreateAuction} from "../auction-hub/dtos/dto-output-create-auction";
 import {FormBuilder,FormGroup,Validators} from "@angular/forms";
+import {DtoOutputUser} from "../inscription/dto-user/dto-output-user";
+import {UserService} from "../user-hub/user.service";
+import {DtoInputUser} from "../user-hub/dtos/dto-input-user";
+import {finalize, Observable, tap} from "rxjs";
+
 
 
 @Component({
@@ -17,6 +22,13 @@ export class FormAddAuctionComponent implements  OnInit {
   dateString : string = this.date.toISOString();
   url:any = "";
 
+  userTest: DtoInputUser = {
+    Id: 0,
+    pseudo: "test",
+    email: "test",
+    password: "test"
+  } ;
+
   form: FormGroup = this._fb.group({
     title: this._fb.control('', Validators.required),
     descri: this._fb.control('', [Validators.required,Validators.minLength(5)]),
@@ -28,26 +40,41 @@ export class FormAddAuctionComponent implements  OnInit {
   });
 
   ngOnInit(): void {
+
+    this.fetchById();
+
   }
 
-  constructor(private _fb: FormBuilder) {
+  constructor(private _fb: FormBuilder, private _userService: UserService) {
+
 
   }
 
   emitAuctionCreated() {
-    this.AuctionCreated.next({
-      idUser: 1,
-      title: this.form.value.title,
-      category: this.form.value.category,
-      descri: this.form.value.descri,
-      img: this.url,
-      price: this.form.value.price,
-      idUserBid : 1,
-      timer: this.form.value.timer
-    });
+    // this.AuctionCreated.next({
+    //   idUser: 1,
+    //   title: this.form.value.title,
+    //   category: this.form.value.category,
+    //   descri: this.form.value.descri,
+    //   img: this.url,
+    //   price: this.form.value.price,
+    //   idUserBid : this.userTest.Id,
+    //   timer: this.form.value.timer
+    // });
+
+    console.log(this.userTest)
+
     console.log(this.form.value.img.value)
     console.log(this.dateString)
     // this.form.reset();
+  }
+
+  private fetchById() {
+    this._userService.fetchById().pipe(
+      tap(u => this.userTest = u),
+      finalize(() => console.log(this.userTest))
+    ).subscribe();
+
   }
 
   get titleControl(){
@@ -96,8 +123,6 @@ export class FormAddAuctionComponent implements  OnInit {
 
     reader.readAsDataURL(file);
 
-
-
     // let reader = new FileReader();
     //
     // reader.readAsDataURL(event.target.files[0]);
@@ -108,4 +133,6 @@ export class FormAddAuctionComponent implements  OnInit {
     //
     // console.log(this.url)
   }
+
+
 }
