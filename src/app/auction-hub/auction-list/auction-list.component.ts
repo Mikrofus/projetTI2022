@@ -3,6 +3,7 @@ import {DtoInputAuction} from "../dtos/dto-input-auction";
 import { Buffer } from 'buffer';
 
 
+
 @Component({
   selector: 'app-auction-list',
   templateUrl: './auction-list.component.html',
