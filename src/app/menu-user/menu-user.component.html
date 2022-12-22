@@ -2,7 +2,7 @@
   <h1>Profil d'utilisateur</h1>
   <img src="assets/img/pp.png" id="ProfilePic" alt="profile picture" class="center">
   <br><br>
-  <span id="speudo">{{user.pseudo}}</span>
+  <span id="speudo">bart</span>
   <br>
   <h1>historique d'achat</h1>
   <table class="tableau">
@@ -16,7 +16,7 @@
 
     <tbody>
     <div *ngFor="let auction of auctions">
-     <div *ngIf="auction.idUser == user.id ">
+     <div *ngIf="auction.idUser == 1 ">
         <tr>
           <td>{{auction.title}}</td>
           <td>{{auction.price}}</td>
