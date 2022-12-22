@@ -4,7 +4,7 @@
   <div class="container">
 
     <div class="zoneImage">
-      <img [src]="'data:image/jpeg;base64,' + auction.img" alt="">
+      <img [src]="'data:image/jpeg;base64,' + auction?.img" >
 
 
     </div>
@@ -13,11 +13,7 @@
 
       <div class="timer">
 
-        <span>03</span>
-        <span>:</span>
-        <span>30</span>
-        <span>:</span>
-        <span>10</span>
+        {{demo}}
 
       </div>
 

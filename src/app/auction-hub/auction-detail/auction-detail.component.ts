@@ -56,7 +56,7 @@ export class AuctionDetailComponent {
     this.price = price;
   }
 
-  countDownDate = new Date("Dec 24, 2022 14:00:00").getTime();
+  countDownDate = new Date("Dec 23, 2022 23:59:59").getTime();
   demo: any;
 
   x = setInterval(() => {
