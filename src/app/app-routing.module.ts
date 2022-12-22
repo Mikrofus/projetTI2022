@@ -24,7 +24,7 @@ const routes:Routes=[
     path:'login',component:LoginComponent
   },
   {
-    path:'inscription',component:PageDaccueilComponent
+    path:'inscription',component:InscriptionComponent
   },
   {
     path:'', component:AuctionHubComponent

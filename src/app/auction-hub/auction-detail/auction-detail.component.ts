@@ -35,7 +35,6 @@ export class AuctionDetailComponent {
 
   fetchAuctionData(id: number) {
     this.service.fetchById(id).subscribe(auction => this.auction = auction);
-
   }
 
   updateAuction(dto: DtoOutputPatchAuction) {
@@ -53,7 +52,8 @@ export class AuctionDetailComponent {
 
 
   updatePrice(price: number) {
-    this.price = price;
+    if(price > this.auction.price)
+      this.price = price;
   }
 
   countDownDate = new Date("Dec 23, 2022 23:59:59").getTime();
