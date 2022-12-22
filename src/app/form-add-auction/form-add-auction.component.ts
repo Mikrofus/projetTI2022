@@ -15,6 +15,7 @@ export class FormAddAuctionComponent implements  OnInit {
 
   date : Date = new Date(2022,12,24,23,59,59);
   dateString : string = this.date.toISOString();
+  url:any = "";
 
   form: FormGroup = this._fb.group({
     title: this._fb.control('', Validators.required),
@@ -39,11 +40,12 @@ export class FormAddAuctionComponent implements  OnInit {
       title: this.form.value.title,
       category: this.form.value.category,
       descri: this.form.value.descri,
-      img: this.form.value.img,
+      img: this.url,
       price: this.form.value.price,
       idUserBid : 1,
       timer: this.form.value.timer
     });
+    console.log(this.form.value.img.value)
     console.log(this.dateString)
     // this.form.reset();
   }
@@ -81,6 +83,28 @@ export class FormAddAuctionComponent implements  OnInit {
   }
 
 
+  selectFile(event:any) {
+    // @ts-ignore
+    const file = (event.target as HTMLInputElement).files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      this.url = reader.result as string;
+      // Use the file path as needed
+    };
+
+    reader.readAsDataURL(file);
 
 
+
+    // let reader = new FileReader();
+    //
+    // reader.readAsDataURL(event.target.files[0]);
+    // reader.onload= (_event) =>{
+    //   this.url = reader;
+    // }
+    //
+    //
+    // console.log(this.url)
+  }
 }
