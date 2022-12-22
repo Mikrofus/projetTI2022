@@ -2,6 +2,8 @@ import {Component, Input} from '@angular/core';
 import {DtoInputAuction} from "../auction-hub/dtos/dto-input-auction";
 import {DtoInputUser} from "../user-hub/dtos/dto-input-user";
 import {UserService}from "../user-hub/user.service";
+import {AuctionService} from "../auction-hub/auction.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-menu-user',
@@ -14,21 +16,24 @@ export class MenuUserComponent {
   user: DtoInputUser | null = null;
 
   price: number=0;
-  constructor() { }
   handler:any = null;
   value: number=50;
 
 
+  constructor(private service: UserService, private route: ActivatedRoute) {
+
+  }
+
 
   ngOnInit(): void {
 
-    /*this.route.paramMap.subscribe(args => {
-      if (args.has("auctionId")) {
-        const Id = Number(args.get("auctionId"));
-        this.fetchUserData(Id);
+    this.route.paramMap.subscribe(args => {
+      if (args.has("userId")) {
+        const userId = Number(args.get("userId"));
+        this.fetchUserData(userId);
       }
 
-    });*/
+    });
 
     this.loadStripe();
   }

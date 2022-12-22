@@ -1,6 +1,4 @@
 <main>
-
-
   <div class="container">
 
     <div class="zoneImage">
@@ -13,7 +11,7 @@
 
       <div class="timer">
 
-        {{demo}}
+        <p>{{timer}}</p>
 
       </div>
 
@@ -21,7 +19,8 @@
       <span id="encherisseurTexte">Encherisseurs</span>
       <span id="prixOffre">{{auction?.price}}</span>
       <div class="zoneBoutons">
-        <input type="text" id="offreEntree"  [(ngModel)]="price" (ngModelChange)="updatePrice($event)"><input value="Miser" type="button" id="miser" (click)="updateAuctionClick(auctionPatch)" >
+        <input type="text" id="offreEntree"  [(ngModel)]="price" (ngModelChange)="updatePrice($event)">
+        <input value="Miser" type="button" id="miser" (click)="updateAuctionClick(auctionPatch)" >
       </div>
 
     </div>
