@@ -39,30 +39,32 @@ export class FormAddAuctionComponent implements  OnInit {
     timer : this._fb.control('')
   });
 
+  constructor(private _fb: FormBuilder, private _userService: UserService) {
+
+
+  }
+
   ngOnInit(): void {
 
     this.fetchById();
 
   }
 
-  constructor(private _fb: FormBuilder, private _userService: UserService) {
 
-
-  }
 
   emitAuctionCreated() {
-    // this.AuctionCreated.next({
-    //   idUser: 1,
-    //   title: this.form.value.title,
-    //   category: this.form.value.category,
-    //   descri: this.form.value.descri,
-    //   img: this.url,
-    //   price: this.form.value.price,
-    //   idUserBid : this.userTest.Id,
-    //   timer: this.form.value.timer
-    // });
+    this.AuctionCreated.next({
+      idUser: 1,
+      title: this.form.value.title,
+      category: this.form.value.category,
+      descri: this.form.value.descri,
+      img: this.url,
+      price: this.form.value.price,
+      idUserBid : this.userTest.Id,
+      timer: this.form.value.timer
+    });
 
-    console.log(this.userTest)
+    console.log(this.userTest.Id)
 
     console.log(this.form.value.img.value)
     console.log(this.dateString)

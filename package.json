@@ -21,6 +21,8 @@
     "@fortawesome/angular-fontawesome": "^0.12.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "bootstrap": "^5.2.2",
+    "ngx-cookie": "^6.0.1",
+    "ngx-cookie-service": "^15.0.0",
     "openssl": "^2.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
