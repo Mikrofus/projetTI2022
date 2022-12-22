@@ -90,6 +90,7 @@ export class FormAddAuctionComponent implements  OnInit {
 
     reader.onloadend = () => {
       this.url = reader.result as string;
+      this.url = this.url.replace('data:image/jpeg;base64,', '');
       // Use the file path as needed
     };
 
