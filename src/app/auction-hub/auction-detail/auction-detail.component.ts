@@ -22,6 +22,7 @@ export class AuctionDetailComponent {
   price = 0;
   auctionPatch: DtoOutputPatchAuction = { id: 0, price: 0, idUserBid: 1 };
   timer: any;
+  status: string="EnCours";
 
   constructor(
     private auctionService: AuctionService,
@@ -79,7 +80,8 @@ export class AuctionDetailComponent {
 
     if (distance < 0) {
       clearInterval(this.x);
-      this.timer = "EXPIRED";
+      this.timer = "Enchere finie";
+      this.status ="Fini";
     }
   });
 }
