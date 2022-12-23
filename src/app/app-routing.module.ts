@@ -11,6 +11,9 @@ import {AuctionDetailComponent} from "./auction-hub/auction-detail/auction-detai
 import {InscriptionComponent} from "./inscription/inscription.component";
 import {AddAuctionComponent} from "./form-add-auction/add-auction/add-auction.component";
 import {MenuUserComponent} from "./menu-user/menu-user.component";
+import {
+  AddAuctionPaymentComponent
+} from "./auction-hub/auction-detail/add-auction-payment/add-auction-payment.component";
 
 
 const routes:Routes=[
@@ -18,13 +21,13 @@ const routes:Routes=[
     path:'list',component:AuctionListComponent
   },
   {
-    path:'detail/:auctionId',component:AuctionDetailComponent
+    path:'detail/:auctionId',component:AddAuctionPaymentComponent
   },
   {
     path:'login',component:LoginComponent
   },
   {
-    path:'inscription',component:InscriptionComponent
+    path:'inscription',component:PageDaccueilComponent
   },
   {
     path:'', component:AuctionHubComponent

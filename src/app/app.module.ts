@@ -22,6 +22,7 @@ import { AddAuctionComponent } from './form-add-auction/add-auction/add-auction.
 import { PiedPageComponent } from './pied-page/pied-page.component';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import {TokenInterceptor, TokenInterceptorProvider} from "./user-hub/token.interceptor";
+import { AddAuctionPaymentComponent } from './auction-hub/auction-detail/add-auction-payment/add-auction-payment.component';
 
 
 // @ts-ignore
@@ -40,6 +41,8 @@ import {TokenInterceptor, TokenInterceptorProvider} from "./user-hub/token.inter
     MenuUserComponent,
     AddAuctionComponent,
     PiedPageComponent,
+    AddAuctionPaymentComponent,
+    AddAuctionPaymentComponent
 
   ],
   imports: [

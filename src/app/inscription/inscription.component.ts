@@ -40,4 +40,6 @@ export class InscriptionComponent implements OnInit {
   get passwordControl(){
     return this.formSignIn1.controls['password'];
   }
+
+
 }

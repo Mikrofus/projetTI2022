@@ -40,4 +40,9 @@ export class AuctionService {
   update(dto: DtoOutputPatchAuction): Observable<DtoInputAuction> {
     return this.httpClient.patch<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/setTopBid/${dto.id}`, dto);
   }
+
+
+  delete(id: number) : Observable<DtoInputAuction> {
+    return this.httpClient.delete<DtoInputAuction>(`${AuctionService.ENTRY_POINT}/delete/${id}`);
+  }
 }
