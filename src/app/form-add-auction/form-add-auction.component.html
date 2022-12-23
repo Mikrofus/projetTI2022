@@ -1,0 +1,62 @@
+<div class="toutelapage">
+  <h2>Ajouter un produit.</h2>
+
+  <form class="row gy-2 gx-3 align-items-center" [formGroup]="form" (ngSubmit)="emitAuctionCreated()">
+    <div class="col-auto">
+      <label class="form-label">Nom du produit :</label>
+      <input type="text" formControlName="title" class="form-control" placeholder="Ordinateur portable">
+      <span *ngIf="titleControl.dirty && titleControl.invalid"> Le nom du produit ne peut être vide !</span>
+    </div>
+
+    <hr>
+
+    <div class="col-auto">
+      <label class="form-label">Categorie de produit:</label>
+      <select class="form-select" formControlName="category">
+        <option value="homeAppliance">Electroménager</option>
+        <option value="electronics">Appareil électronique</option>
+        <option value="vehicle">Véhicule</option>
+        <option value="table">Cuisine</option>
+        <option value="jewelry">Bijou</option>
+        <option value="clothes">Vêtement</option>
+        <option value="other">Autre</option>
+      </select>
+      <span *ngIf="categoryControl.untouched">Précisez une catégorie !</span>
+    </div>
+
+
+    <div class="col-auto">
+      <label class="form-label">Description du produit :</label>
+      <textarea formControlName="descri" class="form-control" placeholder="Ordinateur de la marque ..."></textarea>
+      <span *ngIf="(descriptionControl.dirty && descriptionControl.invalid) || descriptionControl.untouched">Veuillez décrire un minimum le produit !</span>
+    </div>
+
+    <hr>
+
+    <div class="col-auto">
+      <label class="form-label">Choisir une image pour le produit :</label>
+      <br>
+      <input type="file" formControlName="img" (change)="selectFile($event)" accept=".jpg, .jpeg">
+      <span *ngIf="imageControl.untouched || imageControl.invalid">Veuillez introduire une image au format JPEG!</span>
+    </div>
+
+    <hr>
+
+    <div class="col-auto">
+      <label class="form-label">Prix de départ : </label><br>
+      <input type="number" min="0" step="5" formControlName="price" value="5">€
+    </div>
+
+    <hr>
+
+    <div class="col-auto">
+      <label class="form-label">Durée de la vente :</label>
+      <input type="datetime-local" class="form-control" formControlName="timer" value="24:00">
+      <span *ngIf="timerControl.untouched">Le temps par défaut sera de 24h.</span>
+    </div>
+
+    <input type="submit" > <!--[disabled]="form.invalid"-->
+    <button class="btn btn-primary" type="button" (click)="resetForm()">Vider Formulaire</button>
+    <button class="btn btn-primary" routerLink="" routerLinkActive="active">Retour</button>
+  </form>
+</div>

@@ -1,0 +1,38 @@
+h2 {
+  text-align: center;
+  text-decoration: underline;
+  color: white;
+}
+
+form {
+  width: 50%; /* set the width of the form to 50% of the page */
+  margin: 0 auto; /* center the form horizontally */
+  text-align: center;
+  display: flow-root;
+  border-style: double;
+  border-color: whitesmoke;
+}
+
+label {
+  text-decoration: underline;
+  text-decoration-color: white;
+  color: white;
+}
+
+span {
+  color: red;
+}
+
+.toutelapage {
+  background: linear-gradient(#13181d, #20212e, #341b47);
+}
+
+button {
+  background: #331b46;
+  border-color: whitesmoke;
+}
+
+button:hover {
+  background-color: #ba99e7;
+  border-color: #ad77d7;
+}

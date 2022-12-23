@@ -1,0 +1,16 @@
+<form [formGroup]="formLogin1" (ngSubmit)="login()" class="login-form">
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="login"
+           formControlName="login">
+    <label for="floatingInput">Login</label>
+    <span *ngIf="loginControl.invalid && loginControl.dirty">Merci de remplir le champ de login !</span>
+  </div>
+  <div class="form-floating">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+           formControlName="password">
+    <label for="floatingPassword">Mot de passe</label>
+    <span *ngIf="passwordControl.invalid && passwordControl.dirty">Merci de remplir le champ mot de passe !</span>
+  </div>
+  <br>
+  <input type="submit" [disabled]="formLogin1.invalid" value="Se connecter" class="btn btn-lg btn-primary">  &nbsp;
+</form>

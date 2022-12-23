@@ -1,0 +1,24 @@
+<main>
+  <div class="container">
+    <div class="zone-image">
+      <img [src]="'data:image/jpeg;base64,' + auction?.img">
+    </div>
+    <div class="zone-enchere">
+      <div class="timer">
+        <p>{{timer}}</p>
+      </div>
+      <span id="offre-texte">Offre actuelle</span>
+      <span id="prix-offre">{{auction?.price}}</span>
+      <div class="zone-boutons">
+        <input type="text" id="offre-entree" [(ngModel)]="price" (ngModelChange)="updatePrice($event)" [disabled]="timer === 'EXPIRED'">
+        <input value="Miser" type="button" id="miser" (click)="updateAuctionClick(auctionPatch)" [disabled]="timer === 'EXPIRED'">
+
+      </div>
+    </div>
+    <div class="zone-description">
+      <h2>{{auction?.title}}</h2>
+      <h6>Contenu de l'offre:</h6>
+      <span>{{auction?.descri}}</span>
+    </div>
+  </div>
+</main>

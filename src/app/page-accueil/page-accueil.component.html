@@ -1,0 +1,42 @@
+<head>
+  <title>Bazaar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<nav class="navbar">
+  <a routerLink="" class="brand-title"><img class="bazaar" id="titreSite" src="assets/images/Bazaar.png"></a>
+  <a href="#" class="toggle-button">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+  <input type="text" id="barreRecherche" placeholder="Recherche"/>
+  <div class="navbar-links">
+    <ul *ngIf="isConnected == false; else elseBlock" class="navbar">
+
+      <li><a routerLink="/inscription">S'inscrire</a> </li>
+      <li><a routerLink="/login" routerLinkActive="active" >S'identifier</a></li>
+
+    </ul>
+    <ng-template #elseBlock>
+      <ul class="navbar">
+
+        <li><a routerLink="/add" routerLinkActive="active">Ajouter</a> </li>
+        <li><a routerLink="/menuUser" routerLinkActive="active" >Profile</a></li>
+        <li><a routerLink="/" routerLinkActive="active" (click)="disconnect()" >Déconnexion</a></li>
+
+      </ul>
+    </ng-template>
+  </div>
+</nav>
+
+
+
+
+<nav class="filtres">
+
+
+
+</nav>

@@ -1,0 +1,60 @@
+a {
+  list-style: none;
+}
+
+span {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.product {
+  text-align: center;
+  border-radius: 8px;
+  background-color: rgb(33, 28, 28);
+  width: 300px;
+  height: 300px;
+  margin: 28px 0;
+}
+
+.pro-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-left: 74px;
+  margin-right: 74px;
+}
+
+.pro-container .product a {
+  height: 300px;
+  width: 300px;
+}
+
+.pro img {
+  width: 298px;
+  height: 200px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.product .pro .des {
+  text-align: start;
+  padding: 10px;
+  position: relative;
+}
+
+.product .pro .des .titre-enchere {
+  color: whitesmoke;
+}
+
+.product .pro .des p {
+  color: rgb(140, 4, 197);
+  font-weight: 600;
+  position: absolute;
+  top: 60px;
+}
+
+.product .pro .des .timer {
+  position: absolute;
+  top: 60px;
+  left: 220px;
+}

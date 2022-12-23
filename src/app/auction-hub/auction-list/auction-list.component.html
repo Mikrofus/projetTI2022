@@ -1,0 +1,16 @@
+<div class="pro-container">
+  <div *ngFor="let auction of auctions" class="product">
+    <a [routerLink]="'detail/' + auction.id" class="pro">
+      <img [src]="'data:image/jpeg;base64,' + auction.img" alt="">
+
+      <div class="des">
+        <span class="titre-enchere">{{auction.title}}</span> <br>
+
+        <p>$ {{auction.price}}</p>
+        <div class="timer">
+          <span>{{auction.timer.toUpperCase()}}</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

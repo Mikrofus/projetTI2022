@@ -1,0 +1,25 @@
+<div *ngIf="auction; else auctionNotFound" class="pro-container">
+  <div class="product">
+      <img src="assets/images/test.jpg"  alt="L'image du produit ne peut pas etre afficher">
+      <div>
+        <br>
+        <p>Titre : {{auction.title}}</p>
+        <br>
+        <p>Description du produit:
+            {{auction.descri}}
+        </p>
+        <br>
+        <p>{{auction.price}}€</p>
+        <br>
+        <div>
+          {{auction.timer}}
+        </div>
+      </div>
+    <button class="btn btn-primary">Enchérir</button>
+    <button class="btn btn-primary" routerLink="/root" routerLinkActive="active">Retour</button>
+  </div>
+
+</div>
+<ng-template #auctionNotFound>
+  l'enchère n'a pas été trouvée.
+</ng-template>
