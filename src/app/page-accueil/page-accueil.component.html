@@ -14,12 +14,21 @@
   </a>
   <input type="text" id="barreRecherche" placeholder="Recherche"/>
   <div class="navbar-links">
-    <ul >
+    <ul *ngIf="isConnected == false; else elseBlock" class="navbar">
 
-      <li><a routerLink="login">S'identifier</a></li>
-      <li><a routerLink="inscription">S'inscrire</a></li>
-      <li><a routerLink="add">Ajout Enchere</a></li>
+      <li><a routerLink="/inscription">S'inscrire</a> </li>
+      <li><a routerLink="/login" routerLinkActive="active" >S'identifier</a></li>
+
     </ul>
+    <ng-template #elseBlock>
+      <ul class="navbar">
+
+        <li><a routerLink="/add" routerLinkActive="active">Ajouter</a> </li>
+        <li><a routerLink="/menuUser" routerLinkActive="active" >Profile</a></li>
+        <li><a routerLink="/" routerLinkActive="active" >Déconnexion</a></li>
+
+      </ul>
+    </ng-template>
   </div>
 </nav>
 

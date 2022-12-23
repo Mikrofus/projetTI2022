@@ -1,10 +1,10 @@
 <div class="bg">
   <h1>Profil d'utilisateur</h1>
-  <img src="assets/img/pp.png" id="ProfilePic" alt="profile picture" class="center">
   <br><br>
-  <span id="speudo">bart</span>
+  <span id="speudo">{{user?.pseudo}}</span>
   <br>
-  <h1>historique d'achat</h1>
+  <br>
+  <h2>historique d'achat</h2>
   <table class="tableau">
     <thead>
     <tr>
@@ -15,15 +15,12 @@
     </thead>
 
     <tbody>
-    <div *ngFor="let auction of auctions">
-     <div *ngIf="auction.idUser == 1 ">
+    <div *ngFor="let auction of auctionPayment">
         <tr>
           <td>{{auction.title}}</td>
           <td>{{auction.price}}</td>
           <td><button (click)="pay(value)" class="btn">${{auction.price}}</button></td>
         </tr>
-
-      </div>
     </div>
     </tbody>
   </table>

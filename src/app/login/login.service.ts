@@ -10,6 +10,7 @@ import {DtoInputUser} from "../user-hub/dtos/dto-input-user";
 })
 export class LoginService {
   private static readonly ENTRY_POINT = environment.apiUrl + "/users/login"
+
   constructor(private _httpClient: HttpClient) { }
 
 

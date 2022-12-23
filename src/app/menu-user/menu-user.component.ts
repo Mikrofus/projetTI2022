@@ -4,6 +4,8 @@ import {DtoInputUser} from "../user-hub/dtos/dto-input-user";
 import {UserService}from "../user-hub/user.service";
 import {AuctionService} from "../auction-hub/auction.service";
 import {ActivatedRoute} from "@angular/router";
+import {DtoInputAuctionPayment} from "../auction-hub/dtos/dto-input-auction-payment";
+import {AuctionPaymentService} from "../auction-hub/auction-payment.service";
 
 @Component({
   selector: 'app-menu-user',
@@ -12,35 +14,37 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class MenuUserComponent {
 
-  @Input() auctions: DtoInputAuction[] = [];
   user: DtoInputUser | null = null;
+
+  @Input() auctionPayment: DtoInputAuctionPayment[] = [];
 
   price: number=0;
   handler:any = null;
   value: number=50;
 
 
-  constructor(private service: UserService, private route: ActivatedRoute) {
+  constructor(private _userService: UserService, private route: ActivatedRoute, private _auctionPaymentService : AuctionPaymentService) {
 
   }
 
 
   ngOnInit(): void {
 
-    this.route.paramMap.subscribe(args => {
-      if (args.has("userId")) {
-        const userId = Number(args.get("userId"));
-        this.fetchUserData(userId);
-      }
-
-    });
-
+    this.fetchById();
+    this.fetchAuctionPayment();
     this.loadStripe();
   }
 
 
-  fetchUserData(id: number) {
-    //this.service.fetchById(id).subscribe(user => this.user = user);
+  private fetchById()
+  {
+    this._userService.fetchById().subscribe(u => this.user = u)
+  }
+
+
+  private fetchAuctionPayment()
+  {
+    this._auctionPaymentService.fetchAll().subscribe(auction => (this.auctionPayment = auction));
   }
 
 

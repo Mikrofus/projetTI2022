@@ -20,4 +20,9 @@ export class AuctionPaymentService {
     return this._httpClient.post<DtoInputAuctionPayment>(`${AuctionPaymentService.ENTRY_POINT}/create`, dto);
   }
 
+  fetchAll(): Observable<DtoInputAuctionPayment[]>
+  {
+    return this._httpClient.get<DtoInputAuctionPayment[]>(`${AuctionPaymentService.ENTRY_POINT}/fetchAll`);
+  }
+
 }

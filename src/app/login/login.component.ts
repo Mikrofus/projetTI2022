@@ -4,6 +4,7 @@ import {LoginService} from "./login.service";
 import {DtoLoginUser} from "./dto-user/dto-login-user";
 import {DtoOutputUser} from "../inscription/dto-user/dto-output-user";
 import {UserService} from "../user-hub/user.service";
+import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
     }
   );
 
-  constructor(private _fb : FormBuilder, private _loginService: LoginService, private _userService: UserService) { }
+  constructor(private _fb : FormBuilder, private _loginService: LoginService, private _userService: UserService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -41,7 +42,10 @@ export class LoginComponent implements OnInit {
       }
       console.log(this.dto)
 
-      this._loginService.login(this.dto).subscribe(response => console.log(response.toString()));
+      this._loginService.login(this.dto).subscribe();
+
+      this.router.navigate([''])
+
       //
       // this._userService.fetchById().subscribe(user => this.userTest = user)
       // console.log(this.userTest)
