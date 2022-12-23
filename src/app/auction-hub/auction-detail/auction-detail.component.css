@@ -4,97 +4,113 @@
   padding: 0;
 }
 
-/*.container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid;
-}*/
+/*.container {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  border: 1px solid;*/
+/*}*/
 
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
-  }
 
-  .zone-enchere {
+  }
+  .zoneEnchere{
     width: 100%;
-  }
 
-  .zone-description {
+
+  }
+  .zoneDescription{
     width: 100%;
   }
 }
 
+
 .container {
+
   display: flex;
   margin: 0 auto;
   margin-top: 1.5rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
+
   height: 100%;
   width: 100%;
-  gap: 1rem;
+  gap:1rem;
   color: white;
+
 }
 
-.zone-image {
+
+
+
+.zoneImage {
+
+
   width: 45%;
   height: 25rem;
+
 }
 
-.zone-image img {
+.zoneImage img{
   width: 100%;
   height: 100%;
 }
 
-.zone-enchere {
+.zoneEnchere {
   position: relative;
   width: 42vh;
   height: 25rem;
   border: 3px solid #7211F0;
   border-radius: 5px;
+
+
 }
 
-.zone-enchere .timer {
+.zoneEnchere .timer{
   position: absolute;
   top: 0.5rem;
   left: 5.5rem;
+
 }
 
-.zone-enchere .timer span {
+.zoneEnchere .timer span{
+
   font-size: 3rem;
   margin-right: 10px;
 }
 
-.zone-enchere #encherisseur-texte {
+.zoneEnchere #encherisseurTexte{
   position: absolute;
   top: 7rem;
   right: 3rem;
 }
 
-.zone-enchere #offre-texte {
+.zoneEnchere #offreTexte{
   position: absolute;
   top: 7rem;
   left: 3rem;
+
 }
 
-.zone-enchere #prix-offre {
+.zoneEnchere #prixOffre{
   position: absolute;
-  top: 9rem;
+  top:9rem;
   left: 5.5rem;
 }
 
-.zone-boutons {
+.zoneBoutons{
   position: relative;
   top: 13rem;
   left: 6.5rem;
 }
 
-.zone-boutons #miser {
+.zoneBoutons #miser{
   position: absolute;
   left: 6rem;
   height: 3rem;
@@ -104,26 +120,33 @@
   outline: none;
 }
 
-.zone-boutons #offre-entree {
+.zoneBoutons #offreEntree{
   position: absolute;
   width: 6rem;
   height: 3rem;
+
   border: 1px solid #7211F0;
 }
 
-.zone-description {
+.zoneDescription {
   position: relative;
+
   width: 55%;
   height: 20rem;
+
+
 }
 
-.zone-description span {
+.zoneDescription span{
   position: absolute;
-  top: 100px;
+  top:100px;
 }
 
-.zoneDescription h6 {
+.zoneDescription h6{
   position: absolute;
   text-decoration: underline;
-  top: 75px;
+  top:75px;
 }
+
+
+
