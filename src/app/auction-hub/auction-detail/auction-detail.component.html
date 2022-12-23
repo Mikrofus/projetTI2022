@@ -10,10 +10,11 @@
       <span id="offre-texte">Offre actuelle</span>
       <span id="encherisseur-texte">Encherisseur</span>
       <span id="prix-offre">{{auction?.price}}</span>
+      <span id ="winner" >{{user.pseudo}}</span>
       <div class="zone-boutons">
         <input type="text" id="offre-entree" [(ngModel)]="price" (ngModelChange)="updatePrice($event)" [disabled]="timer === 'EXPIRED'">
         <input value="Miser" type="button" id="miser" (click)="updateAuctionClick(auctionPatch)" [disabled]="timer === 'EXPIRED'">
-        <span id ="winner" >{{user.pseudo}}</span>
+
       </div>
     </div>
     <div class="zone-description">

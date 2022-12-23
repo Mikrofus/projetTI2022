@@ -14,8 +14,6 @@ export class AuctionListComponent {
 
   constructor(private _auctionService: AuctionService) {
   }
-
-  timer: any;
   auction: any;
 
   @Input() auctions: DtoInputAuction[] = [];
@@ -25,7 +23,6 @@ export class AuctionListComponent {
   minutes: number = 0;
   seconds: number = 0;
   isPaused: boolean = false;
-
 
 }
 
