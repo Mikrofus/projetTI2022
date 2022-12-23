@@ -22,6 +22,7 @@ export class MenuUserComponent {
   handler:any = null;
   value: number=50;
 
+  test = AuctionPaymentService;
 
   constructor(private _userService: UserService, private route: ActivatedRoute, private _auctionPaymentService : AuctionPaymentService) {
 
@@ -48,17 +49,26 @@ export class MenuUserComponent {
   }
 
 
-  pay(amount: any) {
+  pay(amount: any, id: number) {
+
 
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51MACkeHRlgUGI60P7hhPHhOoIqRGCugVGfOSOLGZ8UFR9spKEgXlS0ywwQMH89egX68BTsxFxVRWOxgn6X2XmrQx00epEW9SEH',
       locale: 'auto',
       token: function (token: any) {
         token.id;
-        console.log(token)
+
+
         alert('Token Created!!');
+
+
+        return token.id;
+
       }
+
     });
+
+    this._auctionPaymentService.delete(id).subscribe(u => console.log(u));
 
     handler.open({
       name: 'Demo Site',
@@ -66,7 +76,6 @@ export class MenuUserComponent {
       amount: amount * 100
     });
 
-    this.price +=amount
 
   }
 
@@ -84,10 +93,15 @@ export class MenuUserComponent {
           token: function (token: any) {
 
             console.log(token)
+
             alert('Payment Success!!');
           }
+
         });
+
+
       }
+
 
       window.document.body.appendChild(s);
     }

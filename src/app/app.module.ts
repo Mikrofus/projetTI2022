@@ -55,6 +55,7 @@ import { AddAuctionPaymentComponent } from './auction-hub/auction-detail/add-auc
     HttpClientModule,
     FormsModule,
     RouterOutlet,
+
   ],
   providers: [TokenInterceptorProvider],
   exports: [

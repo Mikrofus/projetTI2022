@@ -19,7 +19,7 @@
         <tr>
           <td>{{auction.title}}</td>
           <td>{{auction.price}}</td>
-          <td><button (click)="pay(value)" class="btn">${{auction.price}}</button></td>
+          <td><button (click)="pay(value, auction.id)" class="btn">${{auction.price}}</button></td>
         </tr>
     </div>
     </tbody>

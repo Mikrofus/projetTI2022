@@ -13,7 +13,7 @@
       <div class="zone-boutons">
         <input type="text" id="offre-entree" [(ngModel)]="price" (ngModelChange)="updatePrice($event)" [disabled]="timer === 'EXPIRED'">
         <input value="Miser" type="button" id="miser" (click)="updateAuctionClick(auctionPatch)" [disabled]="timer === 'EXPIRED'">
-        <span id ="winner" [hidden]="timer!=='EXPIRED'">{{user.pseudo}}</span>
+        <span id ="winner" >{{user.pseudo}}</span>
       </div>
     </div>
     <div class="zone-description">

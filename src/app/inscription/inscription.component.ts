@@ -20,6 +20,12 @@ export class InscriptionComponent implements OnInit {
   constructor(private _fb : FormBuilder) { }
 
   ngOnInit(): void {
+    const bcrypt = require('bcrypt');
+    const salt = bcrypt.genSalt();
+    const pass = bcrypt.hashSync('Pass@123', salt);
+
+    console.log(pass)
+
   }
 
   signIn() {

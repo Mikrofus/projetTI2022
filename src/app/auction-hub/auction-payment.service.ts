@@ -25,4 +25,8 @@ export class AuctionPaymentService {
     return this._httpClient.get<DtoInputAuctionPayment[]>(`${AuctionPaymentService.ENTRY_POINT}/fetchAll`);
   }
 
+  delete(id: number) : Observable<DtoInputAuctionPayment> {
+    return this._httpClient.delete<DtoInputAuctionPayment>(`${AuctionPaymentService.ENTRY_POINT}/delete/${id}`);
+  }
+
 }
