@@ -34,6 +34,7 @@ export class PageAccueilComponent implements OnInit {
   }
 
 
-
-
+  disconnect() {
+    this._userService.disconnect();
+  }
 }

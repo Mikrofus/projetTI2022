@@ -27,5 +27,10 @@ export class UserService {
     return this._httpClient.post<DtoInputUser>(UserService.ENTRY_POINT, dto);
   }
 
+  disconnect()
+  {
+    this._httpClient.delete(UserService.ENTRY_POINT+"/disconnect").subscribe();
+  }
+
 
 }
