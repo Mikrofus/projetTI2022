@@ -8,7 +8,6 @@ import {
   HttpInterceptor, HTTP_INTERCEPTORS, HttpClient
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {CookieService} from "ngx-cookie-service";
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {

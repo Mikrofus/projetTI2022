@@ -1,8 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {DtoInputAuction} from "./dtos/dto-input-auction";
-import {AuctionService} from "./auction.service";
-import {ActivatedRoute} from "@angular/router";
-import {DtoAuctionTime} from "./dtos/dto-auction-time";
+import { Component, OnInit } from '@angular/core';
+import { DtoInputAuction } from './dtos/dto-input-auction';
+import { AuctionService } from './auction.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-auction-hub',
@@ -10,26 +9,19 @@ import {DtoAuctionTime} from "./dtos/dto-auction-time";
   styleUrls: ['./auction-hub.component.css']
 })
 export class AuctionHubComponent implements OnInit {
+
   auctions: DtoInputAuction[] = [];
 
 
-  constructor(private _auctionService: AuctionService,private _route:ActivatedRoute) {
-  }
+  constructor(private auctionService: AuctionService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-  this.fetchAll();
+    // Récupère toutes les enchères au chargement du composant
+    this.fetchAll();
   }
 
+  // Récupère toutes les enchères
   private fetchAll() {
-    this._auctionService.fetchAll().subscribe(auctions => this.auctions = auctions);
+    this.auctionService.fetchAll().subscribe(auctions => (this.auctions = auctions));
   }
-  //
-  // create(dto: DtoOutputCreateAuction) {
-  //   this._auctionService.create(dto).subscribe(auction => this.auctions.push(auction));
-  // }
-
 }
-
-
-
-

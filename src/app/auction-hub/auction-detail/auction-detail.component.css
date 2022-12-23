@@ -4,113 +4,97 @@
   padding: 0;
 }
 
-/*.container {*/
-/*  width: 100%;*/
-/*  height: 100%;*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*  border: 1px solid;*/
-/*}*/
+/*.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+}*/
 
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
-
   }
-  .zoneEnchere{
+
+  .zone-enchere {
     width: 100%;
-
-
   }
-  .zoneDescription{
+
+  .zone-description {
     width: 100%;
   }
 }
 
-
 .container {
-
   display: flex;
   margin: 0 auto;
   margin-top: 1.5rem;
   margin-bottom: 3rem;
   flex-wrap: wrap;
-
   height: 100%;
   width: 100%;
-  gap:1rem;
+  gap: 1rem;
   color: white;
-
 }
 
-
-
-
-.zoneImage {
-
-
+.zone-image {
   width: 45%;
   height: 25rem;
-
 }
 
-.zoneImage img{
+.zone-image img {
   width: 100%;
   height: 100%;
 }
 
-.zoneEnchere {
+.zone-enchere {
   position: relative;
   width: 42vh;
   height: 25rem;
   border: 3px solid #7211F0;
   border-radius: 5px;
-
-
 }
 
-.zoneEnchere .timer{
+.zone-enchere .timer {
   position: absolute;
   top: 0.5rem;
   left: 5.5rem;
-
 }
 
-.zoneEnchere .timer span{
-
+.zone-enchere .timer span {
   font-size: 3rem;
   margin-right: 10px;
 }
 
-.zoneEnchere #encherisseurTexte{
+.zone-enchere #encherisseur-texte {
   position: absolute;
   top: 7rem;
   right: 3rem;
 }
 
-.zoneEnchere #offreTexte{
+.zone-enchere #offre-texte {
   position: absolute;
   top: 7rem;
   left: 3rem;
-
 }
 
-.zoneEnchere #prixOffre{
+.zone-enchere #prix-offre {
   position: absolute;
-  top:9rem;
+  top: 9rem;
   left: 5.5rem;
 }
 
-.zoneBoutons{
+.zone-boutons {
   position: relative;
   top: 13rem;
   left: 6.5rem;
 }
 
-.zoneBoutons #miser{
+.zone-boutons #miser {
   position: absolute;
   left: 6rem;
   height: 3rem;
@@ -120,33 +104,26 @@
   outline: none;
 }
 
-.zoneBoutons #offreEntree{
+.zone-boutons #offre-entree {
   position: absolute;
   width: 6rem;
   height: 3rem;
-
   border: 1px solid #7211F0;
 }
 
-.zoneDescription {
+.zone-description {
   position: relative;
-
   width: 55%;
   height: 20rem;
-
-
 }
 
-.zoneDescription span{
+.zone-description span {
   position: absolute;
-  top:100px;
+  top: 100px;
 }
 
-.zoneDescription h6{
+.zoneDescription h6 {
   position: absolute;
   text-decoration: underline;
-  top:75px;
+  top: 75px;
 }
-
-
-

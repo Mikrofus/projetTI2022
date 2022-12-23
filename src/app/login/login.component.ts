@@ -4,8 +4,6 @@ import {LoginService} from "./login.service";
 import {DtoLoginUser} from "./dto-user/dto-login-user";
 import {DtoOutputUser} from "../inscription/dto-user/dto-output-user";
 import {UserService} from "../user-hub/user.service";
-import {CookieService} from "ngx-cookie-service";
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,7 +20,7 @@ export class LoginComponent implements OnInit {
     }
   );
 
-  constructor(private _fb : FormBuilder, private _loginService: LoginService, private _userService: UserService, private cookieService: CookieService) { }
+  constructor(private _fb : FormBuilder, private _loginService: LoginService, private _userService: UserService) { }
 
   ngOnInit(): void {
   }

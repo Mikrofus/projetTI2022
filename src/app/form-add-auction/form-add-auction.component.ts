@@ -1,61 +1,55 @@
-import { Component,EventEmitter,OnInit,Output } from '@angular/core';
-import {DtoOutputCreateAuction} from "../auction-hub/dtos/dto-output-create-auction";
-import {FormBuilder,FormGroup,Validators} from "@angular/forms";
-import {DtoOutputUser} from "../inscription/dto-user/dto-output-user";
-import {UserService} from "../user-hub/user.service";
-import {DtoInputUser} from "../user-hub/dtos/dto-input-user";
-import {finalize, Observable, tap} from "rxjs";
-
-
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {DtoOutputCreateAuction} from '../auction-hub/dtos/dto-output-create-auction';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UserService} from '../user-hub/user.service';
+import {DtoInputUser} from '../user-hub/dtos/dto-input-user';
 
 @Component({
   selector: 'app-form-add-auction',
   templateUrl: './form-add-auction.component.html',
-  styleUrls: ['./form-add-auction.component.css']
+  styleUrls: ['./form-add-auction.component.css'],
 })
-
-export class FormAddAuctionComponent implements  OnInit {
-  public userTest: DtoInputUser = {
+export class FormAddAuctionComponent implements OnInit {
+  // userTest de type DtoInputUser avec ses propriétés initialisées à des valeurs par défaut
+  public user: DtoInputUser = {
     id: 0,
-    pseudo: "",
-    mail: "",
-    pass: ""
+    pseudo: '',
+    mail: '',
+    pass: '',
   };
 
   @Output()
   AuctionCreated: EventEmitter<DtoOutputCreateAuction> = new EventEmitter<DtoOutputCreateAuction>();
 
-  date : Date = new Date(2022,12,24,23,59,59);
-  dateString : string = this.date.toISOString();
-  url:any = "";
+  // Déclaration de la date et de sa représentation sous forme de chaîne de caractères
+  date: Date = new Date(2022, 12, 24, 23, 59, 59);
+  dateString: string = this.date.toISOString();
 
+  url: any = '';
 
-
+  // Déclaration du formulaire de création d'enchère avec ses contrôles et validateurs
   form: FormGroup = this._fb.group({
     title: this._fb.control('', Validators.required),
-    descri: this._fb.control('', [Validators.required,Validators.minLength(5)]),
-    category:this._fb.control ('',Validators.required),
-    img: this._fb.control('',Validators.required),
-    price:this._fb.control(0,[Validators.required, Validators.min(0)]),
-    idUserBid:this._fb.control(''),
-    timer : this._fb.control('')
+    descri: this._fb.control('', [Validators.required, Validators.minLength(5)]),
+    category: this._fb.control('', Validators.required),
+    img: this._fb.control('', [Validators.required, Validators.pattern(/^.+\.(jpg|jpeg)$/i)]),
+    price: this._fb.control(0, [Validators.required, Validators.min(0)]),
+    idUserBid: this._fb.control(''),
+    timer: this._fb.control(''),
   });
 
   constructor(private _fb: FormBuilder, private _userService: UserService) {
-
-
   }
 
   ngOnInit(): void {
-
-    this._userService.fetchById()
-      .subscribe(u => this.userTest = u);
-
-
-
+    // Récupération de l'utilisateur actuel lorsque le composant est initialisé
+    this._userService.fetchById().subscribe((u) => (this.user = u));
   }
 
 
+  private fetchById() {
+    this._userService.fetchById().subscribe(u => this.user = u);
+  }
 
   emitAuctionCreated() {
     this.AuctionCreated.next({
@@ -65,79 +59,64 @@ export class FormAddAuctionComponent implements  OnInit {
       descri: this.form.value.descri,
       img: this.url,
       price: this.form.value.price,
-      idUserBid : this.userTest.id,
+      idUserBid: this.user.id,
       timer: this.form.value.timer
     });
-
-    console.log(this.userTest)
-   
-
-
-    // this.form.reset();
   }
 
-  private fetchById() {
-    this._userService.fetchById().subscribe(u => this.userTest = u);
+  selectFile(event: any) {
+    // @ts-ignore
+    const file = (event.target as HTMLInputElement).files[0];
 
-
-
+    // Vérification que le fichier sélectionné est au format JPEG
+    if (file.type === 'image/jpeg') {
+      // Création d'un lecteur de fichiers
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        this.url = reader.result as string;
+        // Remplacement de l'en-tête de données de l'image par une chaîne vide
+        this.url = this.url.replace('data:image/jpeg;base64,', '');
+      };
+      reader.readAsDataURL(file);
+    } else {
+      alert('Seuls les fichiers JPEG sont acceptés !');
+    }
   }
 
-  get titleControl(){
+
+  // Getters et Setters
+
+
+  get titleControl() {
     return this.form.controls['title'];
   }
 
-  get descriControl(){
+  get descriptionControl() {
     return this.form.controls['descri'];
   }
 
-  get categoryControl(){
+  get categoryControl() {
     return this.form.controls['category'];
   }
 
-  get imgControl(){
+  get imageControl() {
     return this.form.controls['img'];
   }
 
-  get priceControl(){
+  get priceControl() {
     return this.form.controls['price'];
   }
 
-  get timerControl(){
+  get timerControl() {
     return this.form.controls['timer'];
   }
 
-  get idUserBid(){
+  get idUserBid() {
     return this.form.controls['idUserBid'];
   }
 
-  resetForm(){
+  resetForm() {
     this.form.reset();
-  }
-
-
-  selectFile(event:any) {
-    // @ts-ignore
-    const file = (event.target as HTMLInputElement).files[0];
-    const reader = new FileReader();
-
-    reader.onloadend = () => {
-      this.url = reader.result as string;
-      this.url = this.url.replace('data:image/jpeg;base64,', '');
-      // Use the file path as needed
-    };
-
-    reader.readAsDataURL(file);
-
-    // let reader = new FileReader();
-    //
-    // reader.readAsDataURL(event.target.files[0]);
-    // reader.onload= (_event) =>{
-    //   this.url = reader;
-    // }
-    //
-    //
-    // console.log(this.url)
   }
 
 

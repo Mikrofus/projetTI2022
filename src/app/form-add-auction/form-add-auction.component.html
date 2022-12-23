@@ -28,7 +28,7 @@
     <div class="col-auto">
       <label class="form-label">Description du produit :</label>
       <textarea formControlName="descri" class="form-control" placeholder="Ordinateur de la marque ..."></textarea>
-      <span *ngIf="(descriControl.dirty && descriControl.invalid) || descriControl.untouched">Veuillez décrire un minimum le produit !</span>
+      <span *ngIf="(descriptionControl.dirty && descriptionControl.invalid) || descriptionControl.untouched">Veuillez décrire un minimum le produit !</span>
     </div>
 
     <hr>
@@ -36,14 +36,14 @@
     <div class="col-auto">
       <label class="form-label">Choisir une image pour le produit :</label>
       <br>
-      <input type="file" formControlName="img" (change)="selectFile($event)">
-      <span *ngIf="imgControl.untouched || imgControl.invalid">Veuillez introduire une image !</span>
+      <input type="file" formControlName="img" (change)="selectFile($event)" accept=".jpg, .jpeg">
+      <span *ngIf="imageControl.untouched || imageControl.invalid">Veuillez introduire une image au format JPEG!</span>
     </div>
 
     <hr>
 
     <div class="col-auto">
-      <label class="form-label">Prix de départ : {{userTest.id}} </label><br>
+      <label class="form-label">Prix de départ : {{user.id}} </label><br>
       <input type="number" min="0" step="5" formControlName="price" value="5">€
     </div>
 
@@ -60,7 +60,3 @@
     <button class="btn btn-primary" routerLink="" routerLinkActive="active">Retour</button>
   </form>
 </div>
-
-
-
-

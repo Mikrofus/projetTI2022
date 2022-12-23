@@ -22,7 +22,6 @@ import { AddAuctionComponent } from './form-add-auction/add-auction/add-auction.
 import { PiedPageComponent } from './pied-page/pied-page.component';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import {TokenInterceptor, TokenInterceptorProvider} from "./user-hub/token.interceptor";
-import { CookieModule } from 'ngx-cookie'
 
 
 // @ts-ignore
@@ -53,7 +52,6 @@ import { CookieModule } from 'ngx-cookie'
     HttpClientModule,
     FormsModule,
     RouterOutlet,
-    CookieModule.forRoot()
   ],
   providers: [TokenInterceptorProvider],
   exports: [
